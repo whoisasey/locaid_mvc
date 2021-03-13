@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 
 const AllPages = ({data}) => {
+	console.log(data)
 
 	const allMapped = data.map(card => {
 		console.log(card)
