@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Fragment, useState, useEffect, useCallback} from 'react'
+const App = () => {
+  const [data, setData] = useState([])
 
-function App() {
+  const getData = useCallback(async function () {
+    try {
+      const response = await fetch('/api/locaid')
+      const json = await response.json();
+      if (!response.ok) {
+        throw new Error(json.message);
+      }
+      console.log(json)
+      setData(json.data)
+    } catch (err) {
+      setData([])
+    }
+  }, [])
+  useEffect( () => {
+    getData()
+  }, [getData])
+  
+
+  console.log(data)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <h1>hello app</h1>
+      <p>{JSON.stringify(data)}</p>
+    </Fragment>
   );
 }
 
