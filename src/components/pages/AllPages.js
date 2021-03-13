@@ -6,9 +6,9 @@ const AllPages = ({data}) => {
 	console.log(data)
 
 	const allMapped = data.map(card => {
-		console.log(card)
+		// console.log(card, card._id)
 		return (
-			<NavLink to={`/page/${card.slug}`} key={card._id.$oid}>
+			<NavLink to={`/page/${card.slug}`} key={card._id}>
 				<SingleCard card={card}/>
 			</NavLink>
 		)
