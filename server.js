@@ -28,7 +28,7 @@ app.use(express.json({ extended: false }));
 app.use('/api/locaid', routes);
 
 if (process.env.NODE_ENV === 'production') {
-        app.use(express.static('client/build'));
+        app.use(express.static('build'));
 }
 
 const PORT = process.env.PORT || 5000;
