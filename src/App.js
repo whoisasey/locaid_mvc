@@ -1,6 +1,13 @@
-import React, {Fragment, useState, useEffect, useCallback} from 'react'
+import React,{useState,useEffect, useCallback} from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Dashboard from './Dashboard';
+import AllPages from './components/pages/AllPages'
+import Nav from './components/Nav'
+import SinglePage from './components/pages/SinglePage';
+// import DB from './data.json'
+
 const App = () => {
-  const [data, setData] = useState([])
+  	const [data, setData] = useState([]);
 
   const getData = useCallback(async function () {
     try {
@@ -9,23 +16,28 @@ const App = () => {
       if (!response.ok) {
         throw new Error(json.message);
       }
-      console.log(json)
       setData(json.data)
     } catch (err) {
       setData([])
     }
   }, [])
-  useEffect( () => {
+  useEffect(() => {
     getData()
-  }, [getData])
-  
 
-  console.log(data)
+  }, [getData])
+  // console.log(data)
+
   return (
-    <Fragment>
-      <h1>hello app</h1>
-      <p>{JSON.stringify(data)}</p>
-    </Fragment>
+    <div className="ui container">
+      <Router>
+      <Nav />
+        <Switch>
+          <Route exact path="/" component={Dashboard} />
+          <Route path="/all" render={()=> <AllPages data={data}/> }/>
+          <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data}/> }/>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
