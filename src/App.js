@@ -28,16 +28,16 @@ const App = () => {
   // console.log(data)
 
   return (
-    <div className="wrapper">
-      <Router>
+    <Router>
       <Nav />
+        <div className="wrapper">
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/all" render={()=> <AllPages data={data}/> }/>
           <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data}/> }/>
         </Switch>
-      </Router>
     </div>
+      </Router>
   );
 }
 

@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 
 const AllPages = ({data}) => {
-	console.log(data)
+	// console.log(data)
 
 	const allMapped = data.map(card => {
 		// console.log(card, card._id)
 		return (
-			<NavLink to={`/page/${card.slug}`} key={card._id}>
+			<NavLink to={`/page/${card.slug}`} key={card._id} className="card">
 				<SingleCard card={card}/>
 			</NavLink>
 		)
@@ -17,8 +17,7 @@ const AllPages = ({data}) => {
 		
 		return (
 			<Fragment>
-				{/* title */}
-				<div className="ui cards">
+				<div className="cards">
 
 				{allMapped}
 				</div>

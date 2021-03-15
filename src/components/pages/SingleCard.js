@@ -1,20 +1,27 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 
 const SingleCard = ({ card }) => {
 	// console.log(card)
 	if (card === undefined) {
 		return null;
 	} else {
-		const { logo, name, address, summary } = card;
+		const { logo, name, address_object, service_cohort } = card;
+
+
+		
 		return (
-			<div className="ui card">
+			<Fragment>
 				<div className="image"><img src={logo} alt={`${name}'s Logo`} /></div>
 				<div className="content">
-					<div className="header">{name}</div>
-					<div className="meta">{address}</div>
-					<div className="description">{summary}</div>
+					<h5 className="card_header">{name}</h5>
+					<div className="card_meta">
+						<p>{address_object.locale}</p>
+						<p>{service_cohort}</p>
+					</div>
+					{/* <p className="card_meta">{address}</p> */}
+					{/* <div className="card_description">{summary}</div> */}
 				</div>
-			</div>
+			</Fragment>
 		);
 	}
 }

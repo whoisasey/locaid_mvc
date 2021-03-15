@@ -1,8 +1,7 @@
 body {
   font-family: $base-font-family;
-  // text-align: center;
   font-size: $base-font-size;
-  $vertical-rhythm: $base-line-height * $base-font-size;
+  line-height: $base-line-height * ($base-font-size);
   color: $primaryfont;
 }
 
@@ -32,6 +31,10 @@ h4 {
   line-height: $base-line-height * ($base-font-size * 2);
 }
 
+h5 {
+  font-size: $base-font-size * 1.5;
+}
+
 svg {
   font-size: $base-font-size * 3;
   color: lightgray;
@@ -41,10 +44,11 @@ svg {
 
 a {
   text-decoration: none;
+  color: $primaryfont;
 
-  &:hover{
-    color: white;
-  }
+  // &:hover{
+  //   color: white;
+  // }
 }
 
 .wrapper {

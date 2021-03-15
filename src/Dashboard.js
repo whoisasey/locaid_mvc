@@ -15,7 +15,7 @@ const Dashboard = () => {
 					<NavLink to="/all" className="button">Find a Trusted Charity</NavLink>
 				</div>
 				<div className="header_right">
-					<img src="https://placekitten.com/400/300" alt="" />
+					<img src="https://picsum.photos/500/400" alt="" />
 				</div>
 			</div>
 
