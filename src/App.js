@@ -28,7 +28,7 @@ const App = () => {
   // console.log(data)
 
   return (
-    <div className="ui container">
+    <div className="wrapper">
       <Router>
       <Nav />
         <Switch>
