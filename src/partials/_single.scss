@@ -1,17 +1,20 @@
 .single {
-  h3 {
-    text-align: center;
- }
   img {
     width: 80%;
     margin: 1rem auto;
+  }
+
+    &>*{
+    padding-top: 3rem;
   }
 }
 
 
 .single.wrapper {
   width: 75%;
-  padding-top: 2rem;
+    &>*{
+    padding-top: 2rem;
+  }
 }
 
 .single_header {
@@ -32,5 +35,27 @@
 
   &>* {
     margin: 1rem 3rem;
+  }
+}
+
+.single_about, .single_services, .single_items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+  &>* {
+    width: calc(100% /2);
+  }
+
+}
+
+.single_services {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin: 0.5rem 1rem;
+    }
   }
 }

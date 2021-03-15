@@ -5,7 +5,7 @@ const Nav = () => {
 	return (
 
 		<div  className="nav">
-			<NavLink to="/" className="logo">placeholder</NavLink>
+			<NavLink to="/" className="logo"><h3>Second Life</h3></NavLink>
 			<div className="menu">
 				{/* input bar goes here */}
 				<NavLink to="/">Trusted Charities</NavLink>

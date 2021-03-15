@@ -19,7 +19,8 @@ const SinglePage = (props) => {
 		return null;
 	} else {
 // console.log(single)
-		const { name, logo, charity_no, summary, mission, vision } = single
+		const { name, logo, charity_no, summary, mission, vision, services, items_accepted_precovid, items_accepted_currently } = single;
+		// console.log(services)
 		return (
 			<div className="single">
 				<img src={logo} alt={`${name}'s Logo`} />
@@ -28,7 +29,6 @@ const SinglePage = (props) => {
 					<div className="single_header">
 						<h3>{name}</h3>
 						<strong>Charity/BN: {charity_no}</strong>
-						<h6>{summary}</h6>
 					</div>
 				
 					<div className="single_info"> 
@@ -42,13 +42,40 @@ const SinglePage = (props) => {
 						</div>
 					</div>
 						
+					{/* horizontal nav bar */}
+					<hr/>
+				</div>
 					<div className="single_about">
 						<h3>About</h3>
-
+						<h6>{summary}</h6>
 					</div>
 
+				{/* gallery */}
 					<div className="single_services">
-						
+					<h3>Services</h3>
+					<ul>
+						{services.map((el, index) => {
+							return (
+								<li key={ index}>{el}</li>
+								)
+						})}
+					</ul>
+				</div>
+				
+				<div className="single_items">
+					<h3>Accepted Items</h3>
+					<div>
+						<div>
+							{/* icons  */}
+						</div>
+						<ul>
+							{items_accepted_precovid.map((el, index) => {
+								return (
+									<li key={index}>{el}</li>
+								)
+							})}
+							{/* list of accepted items */}
+						</ul>
 					</div>
 				</div>
 				
