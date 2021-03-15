@@ -38,7 +38,7 @@
   }
 }
 
-.single_about, .single_services, .single_items {
+.single_about, .single_services, .single_items, .single_donations, .single_contact {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -58,4 +58,24 @@
       margin: 0.5rem 1rem;
     }
   }
+}
+
+.single_items{
+  em {
+    color: red;
+  }
+}
+
+.single_icons {
+  display: flex
+}
+
+.single_contact {
+  ul li {
+    list-style-type: none;
+  }
+}
+
+.contact_buttons {
+  margin-top:2rem;
 }

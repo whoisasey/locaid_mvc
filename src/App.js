@@ -4,6 +4,7 @@ import Dashboard from './Dashboard';
 import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav'
 import SinglePage from './components/pages/SinglePage';
+import Footer from './components/Footer'
 // import DB from './data.json'
 
 const App = () => {
@@ -36,7 +37,8 @@ const App = () => {
           <Route path="/all" render={()=> <AllPages data={data}/> }/>
           <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data}/> }/>
         </Switch>
-    </div>
+      </div>
+      <Footer />
       </Router>
   );
 }

@@ -52,16 +52,19 @@ svg {
 a {
   text-decoration: none;
   color: $primaryfont;
-
-  // &:hover{
-  //   color: white;
-  // }
+  display: inline;
 }
 
+footer {
+  height: 10vh;
+  background-color: $primaryfont;
+  margin-top: 5rem;
+}
 .wrapper {
   max-width: 1400px;
   width: 85%;
   margin: 0 auto;
+  min-height: 80vh;
 }
 
 
@@ -70,6 +73,6 @@ a {
   background-color: $btn-clr;
   padding: 1rem 4rem;
   border-radius: 10px;
-  margin: 1rem auto;
+  margin: 1rem;
   display: inline-block;
 }

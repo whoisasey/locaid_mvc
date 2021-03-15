@@ -1,4 +1,7 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
+import {NavLink} from 'react-router-dom'
+import { Icon, InlineIcon } from '@iconify/react';
+import tshirtIcon from '@iconify-icons/raphael/tshirt';
 
 const SinglePage = (props) => {
 	const slug = props.match.params.slug;
@@ -19,8 +22,14 @@ const SinglePage = (props) => {
 		return null;
 	} else {
 // console.log(single)
-		const { name, logo, charity_no, summary, mission, vision, services, items_accepted_precovid, items_accepted_currently } = single;
-		// console.log(services)
+		const { name, logo, phone, email, charity_no, summary, mission, vision, services, items_accepted_precovid, item_accepted_currently, expenses, revenue, address_object } = single;
+		// console.log(address)
+
+		// console.log(expenses)
+		const { charitable_programs, fundraising, gifts, management_admin, other } = expenses;
+		const total = charitable_programs + fundraising + gifts + management_admin + other;
+		const charitable_percent = Math.ceil((charitable_programs / total) * 100)
+
 		return (
 			<div className="single">
 				<img src={logo} alt={`${name}'s Logo`} />
@@ -54,19 +63,21 @@ const SinglePage = (props) => {
 					<div className="single_services">
 					<h3>Services</h3>
 					<ul>
-						{services.map((el, index) => {
+						{/* {services.map((el, index) => {
 							return (
 								<li key={ index}>{el}</li>
 								)
-						})}
+						})} */}
 					</ul>
 				</div>
 				
 				<div className="single_items">
 					<h3>Accepted Items</h3>
 					<div>
-						<div>
-							{/* icons  */}
+						<div className="single_icons">
+							<Icon icon={tshirtIcon} />
+							<Icon icon={tshirtIcon} />
+							<Icon icon={tshirtIcon} />
 						</div>
 						<ul>
 							{items_accepted_precovid.map((el, index) => {
@@ -74,8 +85,37 @@ const SinglePage = (props) => {
 									<li key={index}>{el}</li>
 								)
 							})}
-							{/* list of accepted items */}
+							
 						</ul>
+						<p>Current Covid Restrictions: <em>{ item_accepted_currently}</em></p>
+					</div>
+				</div>
+
+				<div className="single_donations">
+					<h3>Where Your Donations Go</h3>
+					<div>
+						<div className="statistics">
+								<div className="statistic" >
+									<div className="value"><strong>{charitable_percent}%</strong></div>
+									<div className="label">goes toward charitable programs</div>
+								</div>
+						</div>
+					</div>
+				</div>
+
+				<div className="single_contact">
+					<h3>Contact</h3>
+					<div>
+						<ul>
+							<p>Address:</p>
+							<li>{address_object.street}</li>
+							<li>{address_object.locale}</li>
+							<li>{address_object.postal_code}</li>
+						</ul>
+						<div className="contact_buttons">
+							<a href={`tel:${phone}`} className="button">Call Charity</a>
+							<a href={ `mailto:${email}`} className="button">Email Charity</a>
+						</div>
 					</div>
 				</div>
 				
