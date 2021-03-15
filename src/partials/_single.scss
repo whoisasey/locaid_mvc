@@ -1,9 +1,36 @@
 .single {
   h3 {
     text-align: center;
-  }
+ }
   img {
-    width: 40%;
-    margin: 0 auto;
+    width: 80%;
+    margin: 1rem auto;
+  }
+}
+
+
+.single.wrapper {
+  width: 75%;
+  padding-top: 2rem;
+}
+
+.single_header {
+  text-align: center;
+
+  &>* {
+    padding:3rem 0;
+  }
+}
+
+.single_info {
+  display: flex;
+  text-align: center;
+
+  h4 {
+    font-weight: bold;
+  }
+
+  &>* {
+    margin: 1rem 3rem;
   }
 }
