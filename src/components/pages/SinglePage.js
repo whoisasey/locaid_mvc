@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon,  } from '@iconify/react';
 import tshirtIcon from '@iconify-icons/raphael/tshirt';
+require('dotenv').config()
 
 const SinglePage = (props) => {
 	// console.log(process.env.REACT_APP_GOOGLE_API)
