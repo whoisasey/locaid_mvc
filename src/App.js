@@ -5,7 +5,6 @@ import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
-// import DB from './data.json'
 
 const App = () => {
   	const [data, setData] = useState([]);

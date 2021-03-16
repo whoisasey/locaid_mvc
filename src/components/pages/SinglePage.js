@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react'
-import {NavLink} from 'react-router-dom'
-import { Icon, InlineIcon } from '@iconify/react';
+import React from 'react'
+import { Icon,  } from '@iconify/react';
 import tshirtIcon from '@iconify-icons/raphael/tshirt';
 
 const SinglePage = (props) => {
+	// console.log(process.env.REACT_APP_GOOGLE_API)
 	const slug = props.match.params.slug;
 
 	const data = props.data;
@@ -21,11 +21,8 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
-// console.log(single)
-		const { name, logo, phone, email, charity_no, summary, mission, vision, services, items_accepted_precovid, item_accepted_currently, expenses, revenue, address_object } = single;
-		// console.log(address)
+		const { name, logo, phone, email, charity_no, summary, mission, vision, services, items_accepted_precovid, item_accepted_currently, expenses, image_gallery, address_object } = single;
 
-		// console.log(expenses)
 		const { charitable_programs, fundraising, gifts, management_admin, other } = expenses;
 		const total = charitable_programs + fundraising + gifts + management_admin + other;
 		const charitable_percent = Math.ceil((charitable_programs / total) * 100)
@@ -33,10 +30,12 @@ const SinglePage = (props) => {
 		return (
 			<div className="single">
 				<img src={logo} alt={`${name}'s Logo`} />
-				
+										
 				<div className="single wrapper">
 					<div className="single_header">
 						<h3>{name}</h3>
+					{/* horizontal nav bar */}
+					<hr/>
 						<strong>Charity/BN: {charity_no}</strong>
 					</div>
 				
@@ -50,24 +49,31 @@ const SinglePage = (props) => {
 						<p>{vision}</p>
 						</div>
 					</div>
-						
-					{/* horizontal nav bar */}
-					<hr/>
-				</div>
-					<div className="single_about">
-						<h3>About</h3>
-						<h6>{summary}</h6>
-					</div>
 
-				{/* gallery */}
-					<div className="single_services">
+				</div>
+
+				<div className="single_about">
+					<h3>About</h3>
+					<h6>{summary}</h6>
+				</div>
+
+				<div className="single_gallery">
+					{image_gallery.map((el, index) => {
+						return (
+							<img src={el} alt={`${name} Gallery`} key={index}/>
+						)
+						
+					})}
+				</div>
+
+				<div className="single_services">
 					<h3>Services</h3>
 					<ul>
-						{/* {services.map((el, index) => {
+						{services.map((el, index) => {
 							return (
 								<li key={ index}>{el}</li>
 								)
-						})} */}
+						})}
 					</ul>
 				</div>
 				
@@ -104,8 +110,19 @@ const SinglePage = (props) => {
 				</div>
 
 				<div className="single_contact">
-					<h3>Contact</h3>
-					<div>
+						<h3>Contact</h3>
+					<div className="info">
+						<iframe title="map"
+							frameBorder="0"
+							width="100%"
+							height="300px"
+						loading="lazy"
+						allowfullscreen
+						src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API}
+							&q=${address_object.street},${address_object.locale}&zoom=16`}>
+						</iframe>
+
+					<div className="contact">
 						<ul>
 							<p>Address:</p>
 							<li>{address_object.street}</li>
@@ -118,7 +135,8 @@ const SinglePage = (props) => {
 						</div>
 					</div>
 				</div>
-				
+					</div>
+
 			</div>
 		);
 	}

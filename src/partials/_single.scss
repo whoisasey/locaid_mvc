@@ -38,7 +38,7 @@
   }
 }
 
-.single_about, .single_services, .single_items, .single_donations, .single_contact {
+.single_about, .single_services, .single_items, .single_donations {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -76,6 +76,33 @@
   }
 }
 
+.single_gallery {
+  display: flex;
+  flex-wrap: wrap;
+
+  img {
+    width: calc((100% /2) - 2rem);
+    opacity: .9;
+    margin: 1rem;
+  }
+}
+
+
+.single_contact {
+  .info{
+    margin-top: 2rem;
+    display: flex;
+    align-content: space-between;
+
+    &>* {
+      width: calc(100% /2);
+    }
+
+  }
+}
+.contact {
+  padding-left: 6rem;
+}
 .contact_buttons {
   margin-top:2rem;
 }
