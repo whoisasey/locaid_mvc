@@ -1,11 +1,11 @@
 .single {
   img {
-    width: 80%;
+    width: 50%;
     margin: 1rem auto;
   }
 
     &>*{
-    padding-top: 3rem;
+    padding-top: 5rem;
   }
 }
 
@@ -26,6 +26,7 @@
 }
 
 .single_info {
+  // width: 75%;
   display: flex;
   text-align: center;
 

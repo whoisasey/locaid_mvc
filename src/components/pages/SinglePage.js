@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Icon,  } from '@iconify/react';
 import tshirtIcon from '@iconify-icons/raphael/tshirt';
 require('dotenv').config()
@@ -29,8 +29,9 @@ const SinglePage = (props) => {
 		const charitable_percent = Math.ceil((charitable_programs / total) * 100)
 
 		return (
+			<Fragment>
 			<div className="single">
-				<img src={logo} alt={`${name}'s Logo`} />
+				{/* <img src={logo} alt={`${name}'s Logo`} /> */}
 										
 				<div className="single wrapper">
 					<div className="single_header">
@@ -138,7 +139,8 @@ const SinglePage = (props) => {
 				</div>
 					</div>
 
-			</div>
+				</div>
+				</Fragment>
 		);
 	}
 }
