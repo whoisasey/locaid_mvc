@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard';
 import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav'
+import NavBar from './components/nav/NavBar'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
 
@@ -29,7 +30,8 @@ const App = () => {
 
   return (
     <Router>
-      <Nav />
+      {/* <Nav /> */}
+      <NavBar />
         <div className="wrapper">
         <Switch>
           <Route exact path="/" component={Dashboard} />

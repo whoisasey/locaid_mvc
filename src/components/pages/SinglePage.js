@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Icon,  } from '@iconify/react';
 import tshirtIcon from '@iconify-icons/raphael/tshirt';
+import {SingleHeader, SingleInfo, SingleAbout} from './SingleComponents'
 require('dotenv').config()
 
 const SinglePage = (props) => {
@@ -22,7 +23,7 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
-		const { name, logo, phone, email, charity_no, summary, mission, vision, services, items_accepted_precovid, item_accepted_currently, expenses, image_gallery, address_object } = single;
+		const { name, phone, email, charity_no, summary, mission, vision, services, items_accepted_precovid, item_accepted_currently, expenses, image_gallery, address_object } = single;
 
 		const { charitable_programs, fundraising, gifts, management_admin, other } = expenses;
 		const total = charitable_programs + fundraising + gifts + management_admin + other;
@@ -31,33 +32,17 @@ const SinglePage = (props) => {
 		return (
 			<Fragment>
 			<div className="single">
-				{/* <img src={logo} alt={`${name}'s Logo`} /> */}
-										
 				<div className="single wrapper">
-					<div className="single_header">
-						<h3>{name}</h3>
-					{/* horizontal nav bar */}
-					<hr/>
-						<strong>Charity/BN: {charity_no}</strong>
+					<SingleHeader name={name} charity_no={charity_no}/>
+					<SingleInfo vision={vision} mission={mission}/>
 					</div>
-				
-					<div className="single_info"> 
-					<div className="segment">
-						<h4>Mission</h4>
-						<p>{mission }</p>
-					</div>
-					<div className="segment">
-						<h4>Vision</h4>
-						<p>{vision}</p>
-						</div>
-					</div>
+					
+					<SingleAbout summary={summary}/>
 
-				</div>
-
-				<div className="single_about">
+				{/* <div className="single_about">
 					<h3>About</h3>
 					<h6>{summary}</h6>
-				</div>
+				</div> */}
 
 				<div className="single_gallery">
 					{image_gallery.map((el, index) => {

@@ -23,7 +23,7 @@ const StatsContainer = () => {
 	
 	return (
 		<Fragment>
-				<h3>Does 100% of your donation go to charity?</h3>
+				<h3>Does 100% of your clothing donation go to charity?</h3>
 				<div className="statistics">
 				{stats.map((el, index) => {
 					return (
