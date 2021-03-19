@@ -58,40 +58,40 @@ export const SingleContact = ({ props }) => {
 	const {phone, email, address_object} = props
 
 	return (
-						<div className="single_contact">
-						<h3>Contact</h3>
-					<div className="info">
-						<iframe title="map"
-							frameBorder="0"
-							width="100%"
-							height="300px"
-						loading="lazy"
-						allowFullScreen
-						src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API}
-							&q=${address_object.street},${address_object.locale}&zoom=16`}>
-						</iframe>
+		<div className="single_contact" id="contact">
+			<h3>Contact</h3>
+		<div className="info">
+			<iframe title="map"
+				frameBorder="0"
+				width="100%"
+				height="300px"
+			loading="lazy"
+			allowFullScreen
+			src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API}
+				&q=${address_object.street},${address_object.locale}&zoom=16`}>
+			</iframe>
 
-					<div className="contact">
-						<ul>
-							<p>Address:</p>
-							<li>{address_object.street}</li>
-							<li>{address_object.locale}</li>
-							<li>{address_object.postal_code}</li>
-						</ul>
-						<div className="contact_buttons">
-							<a href={`tel:${phone}`} className="button">Call Charity</a>
-							<a href={ `mailto:${email}`} className="button">Email Charity</a>
-						</div>
-					</div>
-				</div>
-					</div>
+		<div className="contact">
+			<ul>
+				<p>Address:</p>
+				<li>{address_object.street}</li>
+				<li>{address_object.locale}</li>
+				<li>{address_object.postal_code}</li>
+			</ul>
+			<div className="contact_buttons">
+				<a href={`tel:${phone}`} className="button">Call Charity</a>
+				<a href={ `mailto:${email}`} className="button">Email Charity</a>
+			</div>
+		</div>
+	</div>
+		</div>
 	)
 }
 
 export const SingleGallery = ({ props }) => {
 	const {image_gallery, name} = props
 	return (
-	<div className="single_gallery">
+	<div className="single_gallery" id="gallery">
 		{image_gallery.map((el, index) => {
 			return (
 				<img src={el} alt={`${name} Gallery`} key={index}/>
@@ -104,7 +104,7 @@ export const SingleGallery = ({ props }) => {
 
 export const SingleServices = ({props}) => {
 	return (
-		<div className="single_services">
+		<div className="single_services" id="services">
 			<h3>Services</h3>
 			<ul>
 				{props.map((el, index) => {
@@ -120,24 +120,24 @@ export const SingleServices = ({props}) => {
 export const SingleItems = ({ props }) => {
 	const { item_accepted_currently, items_accepted_precovid } = props;
 	return (
-						<div className="single_items">
-					<h3>Accepted Items</h3>
-					<div>
-						<div className="single_icons">
-							<Icon icon={tshirtIcon} />
-							<Icon icon={tshirtIcon} />
-							<Icon icon={tshirtIcon} />
-						</div>
-						<ul>
-							{items_accepted_precovid.map((el, index) => {
-								return (
-									<li key={index}>{el}</li>
-								)
-							})}
-							
-						</ul>
-						<li>Current Covid Restrictions: <em>{ item_accepted_currently}</em></li>
-					</div>
-				</div>
+		<div className="single_items" id="accepted-items">
+		<h3>Accepted Items</h3>
+		<div>
+			<div className="single_icons">
+				<Icon icon={tshirtIcon} />
+				<Icon icon={tshirtIcon} />
+				<Icon icon={tshirtIcon} />
+			</div>
+			<ul>
+				{items_accepted_precovid.map((el, index) => {
+					return (
+						<li key={index}>{el}</li>
+					)
+				})}
+				
+			</ul>
+			<li>Current Covid Restrictions: <em>{ item_accepted_currently}</em></li>
+		</div>
+	</div>
 	)
 }
