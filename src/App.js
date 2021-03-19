@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard';
 import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav'
-import NavBar from './components/nav/NavBar'
+// import NavBar from './components/nav/NavBar'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
+// import {DropdownMenu, Navbar, NavItem} from './components/DropdownMenu'
 
 const App = () => {
   	const [data, setData] = useState([]);
@@ -22,6 +23,7 @@ const App = () => {
       setData([])
     }
   }, [])
+  
   useEffect(() => {
     getData()
 
@@ -30,8 +32,16 @@ const App = () => {
 
   return (
     <Router>
-      {/* <Nav /> */}
-      <NavBar />
+      {/* <NavBar /> */}
+      <Nav />
+      {/* <Navbar>
+        <NavItem props={`Trusted Charities`}>
+          <DropdownMenu />
+        </NavItem>
+
+        <NavItem props={ `About`}/>
+      </Navbar> */}
+
         <div className="wrapper">
         <Switch>
           <Route exact path="/" component={Dashboard} />

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from './Dropdown';
+import { MenuItems } from './MenuItems';
 
-function Navbar() {
+const Navbar = () => {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
@@ -49,7 +50,7 @@ function Navbar() {
               Trusted Charities
               <i className='fas fa-caret-down' />
             </Link>
-            {dropdown && <Dropdown />}
+            {dropdown && <Dropdown items={ MenuItems}/>}
           </li>
           <li className='nav-item'>
             <Link
