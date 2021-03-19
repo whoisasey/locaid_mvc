@@ -120,7 +120,7 @@ export const SingleServices = ({props}) => {
 export const SingleItems = ({ props }) => {
 	const { item_accepted_currently, items_accepted_precovid } = props;
 	return (
-		<div className="single_items" id="accepted-items">
+		<div className="single_services" id="accepted-items">
 		<h3>Accepted Items</h3>
 		<div>
 			<div className="single_icons">

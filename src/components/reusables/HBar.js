@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import { NavLink, useHistory } from 'react-router-dom'
-import { HashLink as Link } from 'react-router-hash-link';
+import { useHistory, Link } from 'react-router-dom'
 
 export const h_bar_links = [
 	{
@@ -39,7 +37,6 @@ export const h_bar_links = [
 
 const HBar = () => {
 	let history = useHistory();
-	console.log(history)
 
 	return (
 		<ul className="h_bar">

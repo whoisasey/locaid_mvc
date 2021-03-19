@@ -22,7 +22,7 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
-		const { name,  charity_no, summary, mission, vision, services,  expenses, } = single;
+		const { name,  charity_no, summary, mission, vision, services,  expenses,image_gallery } = single;
 
 		const { charitable_programs, fundraising, gifts, management_admin, other } = expenses;
 		const total = charitable_programs + fundraising + gifts + management_admin + other;
@@ -36,16 +36,15 @@ const SinglePage = (props) => {
 					<SingleHeader name={name} charity_no={charity_no}/>
 					</div>
 						<HBar />
-					<SingleAbout summary={summary}/>
+					{summary && <SingleAbout summary={summary}/>}
 					
 					<SingleInfo vision={vision} mission={mission} />
 
-					<SingleGallery props={single} />
+					{image_gallery &&<SingleGallery props={single} />}
 					
-					<SingleServices props={services} />
+					{services && <SingleServices props={services} />}
 
 					<SingleItems props={single} />
-
 
 					<SingleFinance props={charitable_percent} />
 					
