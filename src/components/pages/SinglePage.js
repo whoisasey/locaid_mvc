@@ -1,11 +1,10 @@
 import React, { Fragment } from 'react'
-// import { Icon,  } from '@iconify/react';
-// import tshirtIcon from '@iconify-icons/raphael/tshirt';
-import {SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems} from './SingleComponents'
+import Back from '../reusables/Back'
+import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
+import HBar from '../reusables/HBar'
 require('dotenv').config()
 
 const SinglePage = (props) => {
-	// console.log(process.env.REACT_APP_GOOGLE_API)
 	const slug = props.match.params.slug;
 
 	const data = props.data;
@@ -31,11 +30,12 @@ const SinglePage = (props) => {
 
 		return (
 			<Fragment>
+				<Back />
 			<div className="single">
 				<div className="single wrapper">
 					<SingleHeader name={name} charity_no={charity_no}/>
-						<hr/>
 					</div>
+						<HBar />
 					<SingleAbout summary={summary}/>
 					
 					<SingleInfo vision={vision} mission={mission} />

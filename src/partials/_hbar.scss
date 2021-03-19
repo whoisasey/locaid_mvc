@@ -1,0 +1,13 @@
+.h_bar {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px solid $primaryfont;
+  border-bottom: 1px solid $primaryfont;
+  display: flex;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+
+  // a {
+  //   margin: 0 1rem;
+  // }
+}

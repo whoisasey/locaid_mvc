@@ -89,3 +89,14 @@ button.menu {
   margin: 1rem;
   display: inline-block;
 }
+
+.back_btn {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-transform: uppercase;
+
+  svg {
+    margin: 0;
+  }
+}
