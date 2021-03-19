@@ -5,6 +5,8 @@ import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
+import TopViewd from './components/pages/TopViewd'
+import HighImpact from './components/pages/HighImpact';
 
 const App = () => {
   	const [data, setData] = useState([]);
@@ -26,18 +28,17 @@ const App = () => {
     getData()
 
   }, [getData])
-  // console.log(data)
 
   return (
     <Router>
       <Nav />
-
-
         <div className="wrapper">
         <Switch>
           <Route exact path="/" component={Dashboard} />
           <Route path="/all" render={()=> <AllPages data={data}/> }/>
-          <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data}/> }/>
+          <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
+          <Route path="/top-viewed" component={TopViewd} />
+          <Route path="/high-impact" component={HighImpact} />
         </Switch>
       </div>
       <Footer />

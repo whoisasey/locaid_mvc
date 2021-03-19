@@ -36,12 +36,13 @@ const Nav = () => {
 					>
 						<NavLink to="/all">All</NavLink>
 					</Dropdown.Item>
+					
 					<Dropdown.Item >
 						<NavLink to='/all'>Categories</NavLink>
 						<Dropdown.Submenu>
 				{categories.map((el, index) => {
 					return (
-						<Dropdown.Item className="dropdown">{ el}</Dropdown.Item>
+						<Dropdown.Item className="dropdown" key={index}>{ el}</Dropdown.Item>
 					)
 				})}
 						</Dropdown.Submenu>
@@ -52,16 +53,18 @@ const Nav = () => {
 						<Dropdown.Submenu>
 				{locations.map((el, index) => {
 					return (
-						<Dropdown.Item className="dropdown">{ el}</Dropdown.Item>
+						<Dropdown.Item className="dropdown" key={index}>{ el}</Dropdown.Item>
 					)
 				})}
 						</Dropdown.Submenu>
 					</Dropdown.Item >
+
 					<Dropdown.Item className="dropdown">
-						<NavLink to="/"  className="dropdown">Top Viewed</NavLink>
+						<NavLink to="/top-viewed"  className="dropdown">Top Viewed</NavLink>
 					</Dropdown.Item>
+
 					<Dropdown.Item >
-						<NavLink to="/" className="dropdown">High Impact</NavLink>
+						<NavLink to="/high-impact" className="dropdown">High Impact</NavLink>
 					</Dropdown.Item>
 				</Dropdown>
 				
