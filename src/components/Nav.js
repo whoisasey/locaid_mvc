@@ -14,6 +14,12 @@ export const categories = [
 	'Health'
 ]
 
+export const locations = [
+	'Downtown Toronto',
+	'North Toronto',
+	'East Toronto',
+	'West Toronto'
+]
 
 const Nav = () => {
 	return (
@@ -38,12 +44,18 @@ const Nav = () => {
 						<Dropdown.Item className="dropdown">{ el}</Dropdown.Item>
 					)
 				})}
-				
 						</Dropdown.Submenu>
 					</Dropdown.Item>
 				
 					<Dropdown.Item>
-						<NavLink to="/"  className="dropdown">Location</NavLink>
+						<NavLink to="/" className="dropdown">Location</NavLink>
+						<Dropdown.Submenu>
+				{locations.map((el, index) => {
+					return (
+						<Dropdown.Item className="dropdown">{ el}</Dropdown.Item>
+					)
+				})}
+						</Dropdown.Submenu>
 					</Dropdown.Item >
 					<Dropdown.Item className="dropdown">
 						<NavLink to="/"  className="dropdown">Top Viewed</NavLink>

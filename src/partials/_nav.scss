@@ -18,14 +18,20 @@
 
   li {
     list-style-type: none;
+    font-size: $base-font-size * 0.8;
+    margin: 1rem;
 
     &:hover {
       background-color: lighten($light, 3);
       color: $primaryfont;
     }
   }
-  a {
+
+  > * {
     margin: 1rem;
+  }
+
+  a {
     text-transform: uppercase;
   }
 }
