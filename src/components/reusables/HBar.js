@@ -1,4 +1,6 @@
-import {NavLink} from 'react-router-dom'
+import React, { useEffect } from 'react';
+import { NavLink, useHistory } from 'react-router-dom'
+import { HashLink as Link } from 'react-router-hash-link';
 
 export const h_bar_links = [
 	{
@@ -11,36 +13,42 @@ export const h_bar_links = [
 	},
 	{
 	name: 'Vision',
-	section: 'Vision'
+	section: 'vision'
 	},
 	{
 	name: 'Gallery',
-	section: 'Gallery'
+	section: 'gallery'
 	},
 	{
 	name: 'Services',
-	section: 'Services'
+	section: 'services'
 	},
 	{
 	name: 'Accepted Items',
-	section: 'Accepted-Items'
+	section: 'accepted-Items'
 	},
 	{
 	name: 'Financial',
-	section: 'Financial'
+	section: 'financial'
 	},
 		{
 	name: 'Contact',
-	section: 'Contact'
+	section: 'contact'
 	},
 ]
 
 const HBar = () => {
+	let history = useHistory();
+	console.log(history)
+
 	return (
 		<ul className="h_bar">
 			{h_bar_links.map((el, index) => {
 				return (
-					<NavLink to={`#${el.section}`} key={index}>{ el.name}</NavLink>
+					<Link to={{
+						pathname: `${history.location.pathname}`,
+						hash: `#${el.section}`
+					}} key={index}>{ el.name}</Link>
 					)
 				})}
 		</ul>
