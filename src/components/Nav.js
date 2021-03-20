@@ -1,33 +1,41 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
 
-export const categories = [
-	'Animal',
-	'Arts and Culture',
-	'Community',
-	'Education',
-	'Environmental',
-	'Health',
-	'International',
-	'Food',
-	'Health'
-]
 
-export const locations = [
-	'Downtown Toronto',
-	'North Toronto',
-	'East Toronto',
-	'West Toronto'
-]
+const Nav = ({ props, setSearch }) => {
+	// const { setSearch } = props;
+	const [searchVal, setSearchVal] = useState('')
+	// const [search, setSearch] = useState("")
+	// console.log(search)
 
-const Nav = () => {
+	const cohorts = props.map((item) => {
+		return item.service_cohort
+	})
+	const categories = [...new Set(cohorts)]
+
+	const locationsArr = props.map(item => {
+		return item.location
+	})
+	
+	const locations = [...new Set(locationsArr)]
+
+		  const searchSpace = (e) => {
+				let keyword = e.target.value;
+				// console.log(keyword)
+			setSearch(keyword)
+			setSearchVal(keyword)
+		}
 	return (
 
 		<div  className="nav">
 			<NavLink to="/" className="logo"><h3>Second Life</h3></NavLink>
 
 			<ul className="menu">
+				<NavLink to="/search">
+					<input type="text" placeholder="Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
+				</NavLink>
+				
 				<Dropdown
 					className="menu"
 					title='Trusted Charities'
@@ -59,9 +67,9 @@ const Nav = () => {
 						</Dropdown.Submenu>
 					</Dropdown.Item >
 
-					<Dropdown.Item className="dropdown">
+					{/* <Dropdown.Item className="dropdown">
 						<NavLink to="/top-viewed"  className="dropdown">Top Viewed</NavLink>
-					</Dropdown.Item>
+					</Dropdown.Item> */}
 
 					<Dropdown.Item >
 						<NavLink to="/high-impact" className="dropdown">High Impact</NavLink>

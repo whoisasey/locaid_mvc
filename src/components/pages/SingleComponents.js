@@ -41,7 +41,7 @@ export const SingleFinance = ({ props }) => {
 	const { expenses, revenue, name } = props;
 	const { charitable_programs, fundraising, gifts, management_admin, expense_other  } = expenses;
 	const { gov_funding, receipted_donations, non_receipted_donations, other_charity_gifts, rev_other } = revenue;
-	console.log(expenses, revenue)
+
 	const expenses_total = charitable_programs + fundraising + gifts + management_admin + expense_other;
 	const rev_total = gov_funding + receipted_donations + non_receipted_donations + other_charity_gifts + rev_other;
 
