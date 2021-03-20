@@ -22,11 +22,8 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
-		const { name,  charity_no, summary, mission, vision, services,  expenses,image_gallery } = single;
+		const { name,  charity_no, summary, mission, vision, services, image_gallery } = single;
 
-		const { charitable_programs, fundraising, gifts, management_admin, other } = expenses;
-		const total = charitable_programs + fundraising + gifts + management_admin + other;
-		const charitable_percent = Math.ceil((charitable_programs / total) * 100)
 
 		return (
 			<Fragment>
@@ -46,7 +43,7 @@ const SinglePage = (props) => {
 
 					<SingleItems props={single} />
 
-					<SingleFinance props={charitable_percent} />
+					<SingleFinance props={single} />
 					
 					<SingleContact props={single}/>
 

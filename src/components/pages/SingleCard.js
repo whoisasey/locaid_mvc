@@ -5,7 +5,8 @@ const SingleCard = ({ card }) => {
 	if (card === undefined) {
 		return null;
 	} else {
-		const { logo, name, address_object, service_cohort } = card;
+		const { logo, name, service_cohort, location } = card;
+		// console.log(card)
 
 
 		
@@ -15,11 +16,9 @@ const SingleCard = ({ card }) => {
 				<div className="content">
 					<h5 className="card_header">{name}</h5>
 					<div className="card_meta">
-						<p>{address_object.locale}</p>
+						<p>{location}</p>
 						<p>{service_cohort}</p>
 					</div>
-					{/* <p className="card_meta">{address}</p> */}
-					{/* <div className="card_description">{summary}</div> */}
 				</div>
 			</Fragment>
 		);

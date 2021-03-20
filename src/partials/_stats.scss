@@ -1,26 +1,30 @@
-
 .stats {
-	h3 {
-		width: 50%;
-	}
+  h3 {
+    width: 50%;
+  }
+
+  .statistics {
+    padding: 2rem 0;
+    width: 80%;
+  }
 }
 
 .statistics {
-	display: flex;
-	padding: 2rem 0;
-	width: 80%;
-	margin: 0 auto;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-evenly;
 
-	&>*{
-		width: calc((100% / 4) - 3rem);
-		text-align: center;
-		margin: 1.5rem;
-	}
+  & > * {
+    width: calc((100% / 4));
+    text-align: center;
+    margin: 1rem 2rem;
+  }
 }
 
 .statistic {
-	.value {
-		font-size: $base-font-size * 3;
-		margin: 1rem;
-	}
+  .value {
+    margin: 1rem;
+  }
 }

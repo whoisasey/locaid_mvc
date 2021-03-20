@@ -28,7 +28,7 @@ const StatsContainer = () => {
 				{stats.map((el, index) => {
 					return (
 						<div className="statistic" key={index}>
-							<div className="value"><strong>{el.value}</strong></div>
+							<h3 className="value"><strong>{el.value}</strong></h3>
 							<div className="label">{ el.label}</div>
 						</div>
 					)

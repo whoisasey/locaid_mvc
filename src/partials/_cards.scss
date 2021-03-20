@@ -5,17 +5,12 @@
 
 .card {
   width: calc((100% / 3) - 2rem);
-  // border:1px solid goldenrod;
   margin: 1rem;
   padding: 1rem;
   display: flex;
   flex-direction: column;
   align-content: space-between;
   background-color: lighten($light, 17);
-
-  // .image {
-  //   height: 30%;
-  // }
 }
 
 .image {
@@ -37,15 +32,16 @@
   justify-content: space-between;
   height: 100%;
 
-  // border: $border;
-
   & > * {
     margin-top: 1rem;
   }
 }
 
 .card_meta {
-  // font-weight: bold;
   display: flex;
   justify-content: space-between;
+
+  & > * {
+    text-transform: capitalize;
+  }
 }

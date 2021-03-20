@@ -38,16 +38,53 @@ export const SingleAbout = ({ summary}) => {
 }
 
 export const SingleFinance = ({ props }) => {
+	const { expenses, revenue, name } = props;
+	const { charitable_programs, fundraising, gifts, management_admin, expense_other  } = expenses;
+	const { gov_funding, receipted_donations, non_receipted_donations, other_charity_gifts, rev_other } = revenue;
+	console.log(expenses, revenue)
+	const expenses_total = charitable_programs + fundraising + gifts + management_admin + expense_other;
+	const rev_total = gov_funding + receipted_donations + non_receipted_donations + other_charity_gifts + rev_other;
+
+	const charitable_percent = Math.ceil((charitable_programs / expenses_total) * 100)
+	const admin = Math.ceil((management_admin / expenses_total) * 100)
+	const gov = Math.ceil((gov_funding / rev_total) * 100)
+	const fundraised = Math.ceil((fundraising / expenses_total) * 100)
+
+	const financeArr = [
+		{
+			value: `${charitable_percent}%`,
+			label: 'Goes toward charitable programs'
+		},
+		{
+			value: `${admin}%`,
+			label: 'Total compensation for employees'
+		},
+		{
+			value: `${gov}%`,
+			label: 'Funding from the government'
+		},
+		{
+			value: `${fundraised}%`,
+			label: 'From fundraising efforts'
+		}
+	]
+
+
 	return (
 		<div className="single_items" id="financial">
 			<h3>Financial</h3>
 			<div>
 				<div className="statistics">
-						<div className="statistic" >
-							<div className="value"><strong>{props}%</strong></div>
-							<div className="label">goes toward charitable programs</div>
+					{financeArr.map((item, index) => {
+						return (
+							<div className="statistic" key={index}>
+								<h3 className="value"><strong>{item.value}</strong></h3>
+								<div className="label">{item.label}</div>
 						</div>
+						)
+					})}
 				</div>
+				<p>Financial information is provided by Statistics Canada on a yearly basis. {name } believes in the transparency of their financial information to ensure donors are aware where their donations are going towards. If you require further information, please email the charity.</p>
 			</div>
 		</div>
 
