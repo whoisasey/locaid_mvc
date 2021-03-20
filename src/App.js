@@ -10,8 +10,13 @@ import TopViewd from './components/pages/TopViewd'
 import HighImpact from './components/pages/HighImpact';
 
 const App = () => {
-  	const [data, setData] = useState([]);
+  const [data, setData] = useState([]);
   const [search, setSearch] = useState("")
+  // const [navFilter, setNavFilter] = useState("")
+  console.log("search", search)
+  // console.log("filter",navFilter)
+
+  // ! if navFilter !== "", render view and set /: param
 
   const getData = useCallback(async function () {
     try {
@@ -32,16 +37,22 @@ const App = () => {
 
   let toRender = []
   data.forEach((item) => {
-      if(search === "") {
+      if(search === "" ) {
 				 toRender.push(item)
-			}
+      }
+
       else {
-				if(
-          	item.service_cohort.toString().toLowerCase().includes(search.toString().toLowerCase()) || 
-          	item.location.toString().toLowerCase().includes(search.toString().toLowerCase()) || 
-          // 	item.genre.toString().toLowerCase().includes(search.toString().toLowerCase()) || 
+        if(
+          item.service_cohort.toString().toLowerCase().includes(search.toString().toLowerCase()) || 
+          item.location.toString().toLowerCase().includes(search.toString().toLowerCase()) || 
+          	item.address_object.toString().toLowerCase().includes(search.toString().toLowerCase()) || 
 					// item.name.toString().toLowerCase().includes(search.toString().toLowerCase())) {
-          item.name.toString().toLowerCase().includes(search.toString().toLowerCase())) {
+          item.name.toString().toLowerCase().includes(search.toString().toLowerCase())
+          
+            
+        ) {
+          // console.log(item.name == search)
+          // console.log("service", item.service_cohort, "filter", navFilter)
           toRender.push(item)
 				} 
 			} 
@@ -50,13 +61,15 @@ const App = () => {
 
   return (
     <Router>
-      <Nav props={data} setSearch={setSearch}  />
+      <Nav props={data} setSearch={setSearch} />
         <div className="wrapper">
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route path="/all" render={()=> <AllPages data={data} toRender={toRender}/> }/>
+          <Route path="/all" render={()=> <AllPages  toRender={toRender}/> }/>
           <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
-          <Route path="/search" render={()=><AllPages data={data} toRender={toRender} />} />
+          <Route path="/search" render={() => <AllPages toRender={toRender} />} />
+          <Route pat="/categories" render={()=> <AllPages toRender={toRender}/> }/>
+          <Route path="/category/:cohort" render={() => <AllPages toRender={toRender}  />}/>
           {/* <Route path="/top-viewed" component={TopViewd} /> */}
           <Route path="/high-impact" component={HighImpact} />
         </Switch>
@@ -70,3 +83,4 @@ export default App;
 
 // ! routes
 // /categories/:service_cohort --> 
+// onClick, setsearch to value of LI, render new view based on search
