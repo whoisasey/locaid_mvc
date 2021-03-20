@@ -3,11 +3,8 @@ import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
 
 
-const Nav = ({ props, setSearch }) => {
-	// const { setSearch } = props;
+const Nav = ({ props, setSearch,  }) => {
 	const [searchVal, setSearchVal] = useState('')
-	// const [search, setSearch] = useState("")
-	// console.log(search)
 
 	const cohorts = props.map((item) => {
 		return item.service_cohort
@@ -15,25 +12,38 @@ const Nav = ({ props, setSearch }) => {
 	const categories = [...new Set(cohorts)]
 
 	const locationsArr = props.map(item => {
-		return item.location
+		if (item.location !== "") 
+			return item.location
 	})
 	
 	const locations = [...new Set(locationsArr)]
 
-		  const searchSpace = (e) => {
-				let keyword = e.target.value;
-				// console.log(keyword)
-			setSearch(keyword)
-			setSearchVal(keyword)
+	const searchSpace = (e) => {
+		const {value, textContent} = e.target
+	// let keyword = e.target.value;
+	setSearch(value ||textContent)
+	setSearchVal(value || textContent)
+	}
+
+		const reset = (e) => {
+		setSearchVal('')
+		setSearch('')
 		}
+	
+	// const searchFilter = e => {
+	// 	let keyword = e.target.textContent
+	// 	// console.log(keyword)
+	// 	setNavFilter(keyword)
+	// 	// setSearchVal(keyword)
+	// }
 	return (
 
 		<div  className="nav">
-			<NavLink to="/" className="logo"><h3>Second Life</h3></NavLink>
+			<NavLink to="/" className="logo" onClick={(e)=> reset(e) }><h3>Second Life</h3></NavLink>
 
 			<ul className="menu">
 				<NavLink to="/search">
-					<input type="text" placeholder="Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
+					<input type="text" placeholder="&#x1F50D; Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
 				</NavLink>
 				
 				<Dropdown
@@ -46,11 +56,17 @@ const Nav = ({ props, setSearch }) => {
 					</Dropdown.Item>
 					
 					<Dropdown.Item >
-						<NavLink to='/all'>Categories</NavLink>
+						<NavLink to='/categories'>Categories</NavLink>
 						<Dropdown.Submenu>
-				{categories.map((el, index) => {
+							{categories.map((el, index) => {
+								const newLink = el.split('').filter(e => e.trim().length).join('')
+					// console.log(el)
 					return (
-						<Dropdown.Item className="dropdown" key={index}>{ el}</Dropdown.Item>
+						<NavLink key={index} to={`/categories/${newLink}`}>
+							<Dropdown.Item className="dropdown" value={searchVal}
+								onClick={(e) => searchSpace(e)}
+							>{el}</Dropdown.Item>
+						</NavLink>
 					)
 				})}
 						</Dropdown.Submenu>

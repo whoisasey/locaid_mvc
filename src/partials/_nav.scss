@@ -14,13 +14,12 @@
 // }
 
 .menu {
-  display: flex;
+  @include flexCenter();
 
   input {
     border-radius: 10px;
     border: none;
-    margin: 10px;
-    // display: inline;
+    padding: 0.5rem;
     text-align: center;
   }
 
