@@ -3,7 +3,7 @@ import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
 
 
-const Nav = ({ props, setSearch,  }) => {
+const Nav = ({ props, setSearch, logo }) => {
 	const [searchVal, setSearchVal] = useState('')
 
 	const cohorts = props.map((item) => {
@@ -39,7 +39,7 @@ const Nav = ({ props, setSearch,  }) => {
 	return (
 
 		<div  className="nav">
-			<NavLink to="/" className="logo" onClick={(e)=> reset(e) }><h3>Second Life</h3></NavLink>
+			<NavLink to="/" className="logo" onClick={(e)=> reset(e) }><h3>{logo}</h3></NavLink>
 
 			<ul className="menu">
 				<NavLink to="/search">
