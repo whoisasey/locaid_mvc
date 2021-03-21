@@ -35,7 +35,7 @@ const SinglePage = (props) => {
 						<HBar />
 					{summary && <SingleAbout summary={summary}/>}
 					
-					<SingleInfo vision={vision} mission={mission} />
+				{<SingleInfo vision={vision} mission={mission} />}
 
 					{image_gallery &&<SingleGallery props={single} />}
 					
