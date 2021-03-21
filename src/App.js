@@ -5,8 +5,8 @@ import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
-import CatView from './components/CatView'
-import TopViewd from './components/pages/TopViewd'
+// import CatView from './components/CatView'
+// import TopViewd from './components/pages/TopViewd'
 import HighImpact from './components/pages/HighImpact';
 import Loader from './components/reusables/Loader'
 
@@ -15,11 +15,6 @@ export const logo = "Second Life"
 const App = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
-  // const [navFilter, setNavFilter] = useState("")
-  // console.log("search", search) 
-  // console.log("filter",navFilter)
-
-  // ! if navFilter !== "", render view and set /: param
 
   const getData = useCallback(async function () {
     try {
@@ -44,7 +39,6 @@ const App = () => {
     );
   } else {
 
-    // ! add if/else here to stop GET error
     let toRender = [];
     data.forEach((item) => {
       if (search === "") {
@@ -56,12 +50,9 @@ const App = () => {
           item.service_cohort.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           item.location.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           item.address_object.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
-          // item.name.toString().toLowerCase().includes(search.toString().toLowerCase())) {
           item.name.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           item.location.toString().toLowerCase().includes(search.toString().toLowerCase())
         ) {
-          // console.log(item.name == search)
-          // console.log("service", item.service_cohort, "filter", navFilter)
           toRender.push(item);
         }
       }

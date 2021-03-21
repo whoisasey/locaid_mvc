@@ -13,20 +13,34 @@ export const SingleHeader = ({ name, charity_no }) => {
 )
 }
 
-export const SingleInfo = ({mission, vision }) => {
-	return (
-		<Fragment>
-	<div className="single_items" id="mission"> 
+export const SingleInfo = ({ mission, vision }) => {
+
+	const renderMission = () => {
+		return (
+			<div className="single_items" id="mission">
 			<h3>Mission</h3>
-			<h6>{mission }</h6>
-		</div>
-		<div className="single_items" id="vision">
-			<h3>Vision</h3>
-			<h6>{vision}</h6>
+			<h6>{mission}</h6>
 			</div>
-		</Fragment>
-	)
-}
+		)
+	}
+
+	const renderVision = () => {
+		return (
+				<div className="single_items" id="vision">
+					<h3>Vision</h3>
+					<h6>{vision}</h6>
+				</div>
+		)
+	}
+
+		return (
+			<Fragment>
+				{mission ? renderMission() : null}
+				{vision ? renderVision() : null}
+			</Fragment>
+		);
+	}
+
 
 export const SingleAbout = ({ summary}) => {
 	return (
