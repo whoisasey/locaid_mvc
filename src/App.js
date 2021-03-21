@@ -57,9 +57,8 @@ const App = () => {
           item.location.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           item.address_object.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           // item.name.toString().toLowerCase().includes(search.toString().toLowerCase())) {
-          item.name.toString().toLowerCase().includes(search.toString().toLowerCase())
-          
-            
+          item.name.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
+          item.location.toString().toLowerCase().includes(search.toString().toLowerCase())
         ) {
           // console.log(item.name == search)
           // console.log("service", item.service_cohort, "filter", navFilter)
@@ -78,9 +77,11 @@ const App = () => {
             <Route path="/all" render={() => <AllPages toRender={toRender} />} />
             <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
             <Route path="/search" render={() => <AllPages toRender={toRender} />} />
-            <Route pat="/categories" render={() => <AllPages toRender={toRender} />} />
+            {/* <Route pat="/categories" render={() => <AllPages toRender={toRender} />} /> */}
             <Route path="/category/:cohort" render={() => <AllPages toRender={toRender} />} />
+
             {/* <Route path="/top-viewed" component={TopViewd} /> */}
+            <Route path="/location/:locale" render={() => <AllPages toRender={toRender}/> }/>
             <Route path="/high-impact" component={HighImpact} />
           </Switch>
         </div>

@@ -10,7 +10,7 @@ const AllPages = ({ toRender }) => {
 			<Loader />
 			);
 		} else {
-		console.log(toRender);
+		// console.log(toRender);
 
 		const allMapped = toRender.map(card => {
 			return (

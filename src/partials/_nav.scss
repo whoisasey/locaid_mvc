@@ -15,6 +15,9 @@
 
 .menu {
   @include flexCenter();
+  & > * {
+    text-transform: uppercase;
+  }
 
   input {
     border-radius: 10px;
