@@ -2,7 +2,7 @@ const Data = require('../models/data');
 
 exports.getAllData = async (req, res) => {
   try {
-  const allData = await Data.find();
+    const allData = await Data.find();
   res.status(200).json({
   status: 'Success ✨',
   data: allData,
