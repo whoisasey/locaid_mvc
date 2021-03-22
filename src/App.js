@@ -15,6 +15,7 @@ export const logo = "Second Life"
 const App = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
+  // console.log(search)
 
   const getData = useCallback(async function () {
     try {
@@ -51,7 +52,8 @@ const App = () => {
           item.location.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           item.address_object.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
           item.name.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
-          item.location.toString().toLowerCase().includes(search.toString().toLowerCase())
+          item.location.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
+          item.service_cohort === search
         ) {
           toRender.push(item);
         }
@@ -69,7 +71,7 @@ const App = () => {
             <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
             <Route path="/search" render={() => <AllPages toRender={toRender} />} />
             {/* <Route pat="/categories" render={() => <AllPages toRender={toRender} />} /> */}
-            <Route path="/category/:cohort" render={() => <AllPages toRender={toRender} />} />
+            <Route path="/categories/:cohort" render={() => <AllPages toRender={toRender} />} />
 
             {/* <Route path="/top-viewed" component={TopViewd} /> */}
             <Route path="/location/:locale" render={() => <AllPages toRender={toRender}/> }/>

@@ -6,7 +6,7 @@ import Back from '../reusables/Back'
 
 const AllPages = ({ toRender }) => {
 	
-	if (toRender === [] || toRender.length === 0) {
+	if (toRender === []) {
 		return (
 			<Loader />
 			);

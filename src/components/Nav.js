@@ -19,7 +19,8 @@ const Nav = ({ props, setSearch, logo }) => {
 	const locations = [...new Set(locationsArr)]
 
 	const searchSpace = (e) => {
-		const {value, textContent} = e.target
+		const { value, textContent } = e.target
+		// console.log(value, textContent)
 	setSearch(value ||textContent)
 	setSearchVal(value || textContent)
 	}
@@ -53,7 +54,6 @@ const Nav = ({ props, setSearch, logo }) => {
 						<Dropdown.Submenu>
 							{categories.map((el, index) => {
 								const newLink = el.split('').filter(e => e.trim().length).join('')
-					// console.log(el)
 					return (
 						<NavLink key={index} to={`/categories/${newLink}`}>
 							<Dropdown.Item className="dropdown" value={searchVal}
@@ -65,9 +65,7 @@ const Nav = ({ props, setSearch, logo }) => {
 						</Dropdown.Submenu>
 					</Dropdown.Item>
 				
-					<Dropdown.Item>
-						<NavLink to="/" className="dropdown">Location</NavLink>
-						<Dropdown.Submenu>
+					<Dropdown.Item>Location<Dropdown.Submenu>
 							{locations.map((el, index) => {
 							const newLink = el.split('').filter(e => e.trim().length).join('')
 					return (
