@@ -29,9 +29,9 @@ const SinglePage = (props) => {
 			<Fragment>
 				<Back />
 			<div className="single">
-				<div className="single wrapper">
-					<SingleHeader name={name} charity_no={charity_no}/>
-					</div>
+				{/* <div className="single wrapper"> */}
+						<SingleHeader props={ single}/>
+					{/* </div> */}
 						<HBar />
 					{summary && <SingleAbout summary={summary}/>}
 					

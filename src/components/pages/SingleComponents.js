@@ -3,11 +3,17 @@ import { Icon,  } from '@iconify/react';
 import tshirtIcon from '@iconify-icons/raphael/tshirt';
 
 
-export const SingleHeader = ({ name, charity_no }) => {
+export const SingleHeader = ({ props }) => {
+	const { name, charity_no, image_gallery } = props;
+	const image_header = image_gallery ? 	<img src={image_gallery[2]} alt={name}/> : null
+
 	return (
 		<div className="single_header">
-		<h3>{name}</h3>
-		<strong>Charity/BN: {charity_no}</strong>
+			{image_header}
+		<div className="hero_text">
+			<h3>{name}</h3>
+			<strong>Charity/BN: {charity_no}</strong>
+		</div>
 
 	</div>
 )
@@ -83,7 +89,6 @@ export const SingleFinance = ({ props }) => {
 		}
 	]
 
-
 	return (
 		<div className="single_items" id="financial">
 			<h3>Financial</h3>
@@ -106,7 +111,7 @@ export const SingleFinance = ({ props }) => {
 }
 
 export const SingleContact = ({ props }) => {
-	const {phone, email, address_object} = props
+	const {phone, email, address_object, website} = props
 
 	return (
 		<div className="single_contact" id="contact">
@@ -114,7 +119,7 @@ export const SingleContact = ({ props }) => {
 		<div className="info">
 			<iframe title="map"
 				frameBorder="0"
-				width="100%"
+				width="75%"
 				height="300px"
 			loading="lazy"
 			allowFullScreen
@@ -128,13 +133,14 @@ export const SingleContact = ({ props }) => {
 				<li>{address_object.street}</li>
 				<li>{address_object.locale}</li>
 				<li>{address_object.postal_code}</li>
-			</ul>
+					</ul>
+		</div>
+	</div>
 			<div className="contact_buttons">
+			<a href={website} className="button">Website</a>
 				<a href={`tel:${phone}`} className="button">Call Charity</a>
 				<a href={ `mailto:${email}`} className="button">Email Charity</a>
 			</div>
-		</div>
-	</div>
 		</div>
 	)
 }
