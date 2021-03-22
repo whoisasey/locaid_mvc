@@ -1,4 +1,6 @@
 import React, { Fragment } from 'react'
+import blankets from '../../assets/charity_desc/1-Blankets.png'
+
 import { Icon,  } from '@iconify/react';
 import tshirtIcon from '@iconify-icons/raphael/tshirt';
 
@@ -181,9 +183,9 @@ export const SingleItems = ({ props }) => {
 		<h3>Accepted Items</h3>
 		<div>
 			<div className="single_icons">
+				{/* <Icon icon={tshirtIcon} />
 				<Icon icon={tshirtIcon} />
-				<Icon icon={tshirtIcon} />
-				<Icon icon={tshirtIcon} />
+				<Icon icon={tshirtIcon} /> */}
 			</div>
 			<ul>
 				{items_accepted_precovid.map((el, index) => {
@@ -192,8 +194,8 @@ export const SingleItems = ({ props }) => {
 					)
 				})}
 				
-			</ul>
 			<li>Current Covid Restrictions: <em>{ item_accepted_currently}</em></li>
+			</ul>
 		</div>
 	</div>
 	)

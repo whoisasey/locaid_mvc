@@ -29,6 +29,7 @@ const Nav = ({ props, setSearch, logo }) => {
 		setSearch('')
 		}
 	
+	// ! add reset on 'all' in dropdown
 	return (
 
 		<div  className="nav">
