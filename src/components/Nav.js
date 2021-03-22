@@ -3,7 +3,7 @@ import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
 
 
-const Nav = ({ props, setSearch, logo }) => {
+const Nav = ({ props, setSearch, Desktop }) => {
 	const [searchVal, setSearchVal] = useState('')
 
 	const cohorts = props.map((item) => {
@@ -29,10 +29,13 @@ const Nav = ({ props, setSearch, logo }) => {
 		setSearch('')
 		}
 	
+	// ! add reset on 'all' in dropdown
 	return (
 
 		<div  className="nav">
-			<NavLink to="/" className="logo" onClick={(e)=> reset(e) }><h3>{logo}</h3></NavLink>
+			<NavLink to="/" className="logo" onClick={(e) => reset(e)}>
+				<Desktop />
+			</NavLink>
 
 			<ul className="menu">
 				<NavLink to="/search">

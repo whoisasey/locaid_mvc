@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react'
 import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 import Loader from '../reusables/Loader'
@@ -21,7 +20,7 @@ const AllPages = ({ toRender, search }) => {
 
 		
 		return (
-			<Fragment>
+			<div className="wrapper">
 				<Back />
 				<h3>{search}</h3>
 				<p>{`${toRender.length} items` }</p>
@@ -30,7 +29,7 @@ const AllPages = ({ toRender, search }) => {
 
 					{allMapped}
 				</div>
-			</Fragment>
+			</div>
 		);
 	}
 }

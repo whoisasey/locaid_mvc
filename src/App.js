@@ -9,8 +9,8 @@ import About from './components/pages/About'
 // import TopViewd from './components/pages/TopViewd'
 import HighImpact from './components/pages/HighImpact';
 import Loader from './components/reusables/Loader'
+import {Desktop} from './components/reusables/Logo'
 
-export const logo = "Second Life"
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -62,22 +62,18 @@ const App = () => {
 
     return (
       <Router>
-        <Nav props={data} setSearch={setSearch} logo={logo} />
-        <div className="wrapper">
+        <Nav props={data} setSearch={setSearch} Desktop={Desktop} />
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/all" render={() => <AllPages toRender={toRender}  search={search}/>} />
             <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
             <Route path="/search" render={() => <AllPages toRender={toRender} />} />
-            {/* <Route pat="/categories" render={() => <AllPages toRender={toRender} />} /> */}
             <Route path="/categories/:cohort" render={() => <AllPages toRender={toRender}  search={search}/>} />
 
-            {/* <Route path="/top-viewed" component={TopViewd} /> */}
             <Route path="/location/:locale" render={() => <AllPages toRender={toRender} search={search}/> }/>
             <Route path="/high-impact" render={() => <HighImpact props={ toRender}/>} />
             <Route path="/about" component={About }/>
           </Switch>
-        </div>
         <Footer />
       </Router>
     );
@@ -85,7 +81,3 @@ const App = () => {
 }
 
 export default App;
-
-// ! routes
-// /categories/:service_cohort --> 
-// onClick, setsearch to value of LI, render new view based on search

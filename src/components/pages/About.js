@@ -1,30 +1,41 @@
-import React, {Fragment} from 'react'
-import { Icon,  } from '@iconify/react';
-import tshirtIcon from '@iconify-icons/raphael/tshirt';
-import img from '../../assets/about.png'
+import img from '../../assets/about_page/Illustration/what_we_do_img.png'
+import tshirt from '../../assets/about_page/Icons/1-GoodCondition.png'
+import toosmall from '../../assets/about_page/Icons/2-TooSmall.png'
+import dontwear from '../../assets/about_page/Icons/3-DontWear.png'
+import nounders from '../../assets/about_page/Icons/4-NoUndergarments.png'
+import formal from '../../assets/about_page/Icons/5-FormalAttire.png'
+import nosmell from '../../assets/about_page/Icons/6-NoSmell.png'
+
 
 export const donations = [
 	{
+		img: {0: tshirt},
 		text: 'Good condition (no stains, holes, or tears) '
 	},
 	{
+		img: {0: toosmall},
 		text: 'Too small? Too tight?'
-	},	{
+	},
+	{
+		img: {0: dontwear},
 		text: 'Don’t wear it anymore? '
 	},
-		{
+	{
+		img: {0: nounders},
 		text: 'No undergarments '
 	},
-			{
+	{
+		img: {0: formal},
 		text: 'Old formal attire?'
-	},
-				{
+	},			
+	{
+		img: { 0: nosmell},
 		text: 'No weird smell'
 	},
 ]
 const About = () => {
 	return (
-		<Fragment>
+		<div className="wrapper">
 			<div className="about_hero">
 				<h2>What we do</h2>
 				<img src={img} alt="woman on computer with a drink" />
@@ -43,7 +54,7 @@ const About = () => {
 					{donations.map((el, index) => {
 						return (
 							<div key={index}>
-							<Icon icon={tshirtIcon} />
+								<img src={el.img[0] } alt="" />
 								<p>{el.text}</p>
 							</div>
 						)
@@ -52,7 +63,7 @@ const About = () => {
 
 
 			</div>
-		</Fragment>
+		</div>
 	)
 }
 

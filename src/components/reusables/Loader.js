@@ -1,5 +1,4 @@
   import React, {Fragment} from 'react'
-import {logo} from '../../App'
 
   const Loader = () => {
 
@@ -21,7 +20,7 @@ import {logo} from '../../App'
         <g>
             <use xlinkHref="#circlePath" fill="none"/>
             <text fill="#d9d7d7">
-                <textPath href="#circlePath" className="branding"> {logo}
+                <textPath href="#circlePath" className="branding"> Second Life
                 </textPath>
             </text>
         </g>

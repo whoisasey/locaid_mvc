@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom'
 import StatsContainer from './components/homepage/StatsContainer'
 import { Icon } from '@iconify/react';
 import chevronThinDown from '@iconify-icons/entypo/chevron-thin-down';
+import img from './assets/Homepage/Homepage_illustration.png'
 
 const Dashboard = () => {
 
@@ -15,13 +16,13 @@ const Dashboard = () => {
 					<NavLink to="/all" className="button">Find a Trusted Charity</NavLink>
 				</div>
 				<div className="header_right">
-					<img src="https://picsum.photos/500/400" alt="" />
+					<img src={img } alt="cartoon woman carrying a box of clothing to donate" />
 				</div>
 			</div>
 
-					<Icon icon={chevronThinDown} />
+					{/* <Icon icon={chevronThinDown} /> */}
 
-			<div className="stats">
+			<div className="stats wrapper">
 				<StatsContainer />
 			</div>
 

@@ -36,9 +36,12 @@ const HighImpact = ({ props }) => {
 
 
 		return (
-			<div>
-				<h2>high impact</h2>
+			<div className="wrapper">
+				{/* <h2>high impact</h2> */}
+				<div className="cards">
+
 				{filterView}
+				</div>
 			</div>
 		);
 	}
