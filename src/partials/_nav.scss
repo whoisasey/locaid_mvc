@@ -13,9 +13,10 @@
   }
 }
 
-// .logo {
-// 	margin: 1rem;
-// }
+.logo {
+  margin: 1rem;
+  width: 40%;
+}
 
 .menu {
   @include flexCenter();

@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
 import blankets from '../../assets/charity_desc/1-Blankets.png'
 
-import { Icon,  } from '@iconify/react';
-import tshirtIcon from '@iconify-icons/raphael/tshirt';
+// import { Icon,  } from '@iconify/react';
+// import tshirtIcon from '@iconify-icons/raphael/tshirt';
 
 
 export const SingleHeader = ({ props }) => {

@@ -9,8 +9,8 @@ import About from './components/pages/About'
 // import TopViewd from './components/pages/TopViewd'
 import HighImpact from './components/pages/HighImpact';
 import Loader from './components/reusables/Loader'
+import {Desktop} from './components/reusables/Logo'
 
-export const logo = "Second Life"
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -62,7 +62,7 @@ const App = () => {
 
     return (
       <Router>
-        <Nav props={data} setSearch={setSearch} logo={logo} />
+        <Nav props={data} setSearch={setSearch} Desktop={Desktop} />
           <Switch>
             <Route exact path="/" component={Dashboard} />
             <Route path="/all" render={() => <AllPages toRender={toRender}  search={search}/>} />
