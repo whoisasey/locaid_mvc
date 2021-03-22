@@ -6,7 +6,6 @@ import Nav from './components/Nav'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
 import About from './components/pages/About'
-// import CatView from './components/CatView'
 // import TopViewd from './components/pages/TopViewd'
 import HighImpact from './components/pages/HighImpact';
 import Loader from './components/reusables/Loader'
@@ -75,7 +74,7 @@ const App = () => {
 
             {/* <Route path="/top-viewed" component={TopViewd} /> */}
             <Route path="/location/:locale" render={() => <AllPages toRender={toRender} search={search}/> }/>
-            <Route path="/high-impact" component={HighImpact} />
+            <Route path="/high-impact" render={() => <HighImpact props={ toRender}/>} />
             <Route path="/about" component={About }/>
           </Switch>
         </div>
