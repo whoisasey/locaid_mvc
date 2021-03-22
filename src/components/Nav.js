@@ -48,7 +48,7 @@ const Nav = ({ props, setSearch, Desktop }) => {
 				>
 					<Dropdown.Item className="dropdown"
 					>
-						<NavLink to="/all">All</NavLink>
+						<NavLink to="/all" onClick={(e) => reset(e)}>All</NavLink>
 					</Dropdown.Item>
 					
 					<Dropdown.Item >
