@@ -1,23 +1,23 @@
-
 .header,
 .section {
   @include flexCenter();
 }
 
 .header {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-height: 80vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 80vh;
 
-.header_left{
-  width: 50%;
-}
+  .header_left {
+    width: 50%;
+  }
 }
 
 .section {
   width: 50%;
   text-align: center;
   margin: 0 auto;
+  flex-direction: column;
 }

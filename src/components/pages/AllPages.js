@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 import Loader from '../reusables/Loader'
+import Back from '../reusables/Back'
 
 const AllPages = ({ toRender }) => {
 	
@@ -10,7 +11,6 @@ const AllPages = ({ toRender }) => {
 			<Loader />
 			);
 		} else {
-		// console.log(toRender);
 
 		const allMapped = toRender.map(card => {
 			return (
@@ -20,10 +20,12 @@ const AllPages = ({ toRender }) => {
 			);
 		});
 
-
 		
 		return (
 			<Fragment>
+				<Back />
+				{/* title of category search */}
+				{/* filter navigation */}
 				<div className="cards">
 
 					{allMapped}
