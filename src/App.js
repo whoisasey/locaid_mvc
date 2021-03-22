@@ -10,6 +10,7 @@ import About from './components/pages/About'
 import HighImpact from './components/pages/HighImpact';
 import Loader from './components/reusables/Loader'
 import {Desktop} from './components/reusables/Logo'
+import Design from './components/Design';
 
 
 const App = () => {
@@ -72,7 +73,8 @@ const App = () => {
 
             <Route path="/location/:locale" render={() => <AllPages toRender={toRender} search={search}/> }/>
             <Route path="/high-impact" render={() => <HighImpact props={ toRender}/>} />
-            <Route path="/about" component={About }/>
+          <Route path="/about" component={About} />
+          <Route path="/design" component={Design }/>
           </Switch>
         <Footer />
       </Router>
