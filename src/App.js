@@ -14,7 +14,7 @@ export const logo = "Second Life"
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState("All");
   // console.log(search)
 
   const getData = useCallback(async function () {
@@ -42,10 +42,9 @@ const App = () => {
 
     let toRender = [];
     data.forEach((item) => {
-      if (search === "") {
+      if (search === "All") {
         toRender.push(item);
       }
-
       else {
         if (
           item.service_cohort.toString().toLowerCase().includes(search.toString().toLowerCase()) ||
@@ -67,14 +66,14 @@ const App = () => {
         <div className="wrapper">
           <Switch>
             <Route exact path="/" component={Dashboard} />
-            <Route path="/all" render={() => <AllPages toRender={toRender} />} />
+            <Route path="/all" render={() => <AllPages toRender={toRender}  search={search}/>} />
             <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
             <Route path="/search" render={() => <AllPages toRender={toRender} />} />
             {/* <Route pat="/categories" render={() => <AllPages toRender={toRender} />} /> */}
-            <Route path="/categories/:cohort" render={() => <AllPages toRender={toRender} />} />
+            <Route path="/categories/:cohort" render={() => <AllPages toRender={toRender}  search={search}/>} />
 
             {/* <Route path="/top-viewed" component={TopViewd} /> */}
-            <Route path="/location/:locale" render={() => <AllPages toRender={toRender}/> }/>
+            <Route path="/location/:locale" render={() => <AllPages toRender={toRender} search={search}/> }/>
             <Route path="/high-impact" component={HighImpact} />
           </Switch>
         </div>
