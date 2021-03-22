@@ -29,6 +29,11 @@
   }
 }
 
+.card_header {
+  font-size: $base-font-size;
+  line-height: $base-line-height * ($base-font-size * 0.8);
+  font-weight: bold;
+}
 .content {
   display: flex;
   flex-direction: column;

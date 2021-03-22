@@ -68,7 +68,7 @@ const App = () => {
             <Route exact path="/" component={Dashboard} />
             <Route path="/all" render={() => <AllPages toRender={toRender}  search={search}/>} />
             <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
-            <Route path="/search" render={() => <AllPages toRender={toRender} />} />
+            <Route path="/search" render={() => <AllPages toRender={toRender} search={search} />} />
             <Route path="/categories/:cohort" render={() => <AllPages toRender={toRender}  search={search}/>} />
 
             <Route path="/location/:locale" render={() => <AllPages toRender={toRender} search={search}/> }/>

@@ -24,13 +24,19 @@ const Dashboard = () => {
 
 			<div className="stats wrapper">
 				<StatsContainer />
-			</div>
 
 			<div className="section">
 				<p>The biggest concern with charities is transparency.
 				Learn how we’re are making sure your 
 				100% of donation goes to those in need.</p>
-				<NavLink to="/" className="button">Learn More</NavLink>
+				<NavLink to="/about" className="button">Learn More</NavLink>
+			</div>
+
+			{/* <div className="stats">
+					<h3>Featured Charities</h3>
+					GALLERY GOES HERE<br/>
+				 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum perferendis dicta aspernatur deleniti adipisci quasi odio. Mollitia deleniti itaque, quis molestias aliquam rem veritatis repudiandae modi cumque saepe impedit nostrum quasi perferendis facere eaque, libero architecto a assumenda obcaecati amet placeat eveniet dolorum non! Impedit omnis tempora iste voluptatibus labore eos quae pariatur delectus itaque nisi? Laborum debitis est impedit dolorem natus ipsa et, ipsam dolor temporibus reprehenderit aspernatur nulla enim vitae? Hic molestias quam neque magnam placeat obcaecati in accusantium! Magnam aspernatur saepe qui at illum sapiente officia dolores animi ratione rem hic repellat deserunt, quos nihil molestias? Accusantium!
+				 </div> */}
 			</div>
 		</Fragment>
 	)
