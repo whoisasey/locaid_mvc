@@ -14,11 +14,7 @@ const StatsContainer = () => {
 		{
 			value: "90%",
 			label: "of clothing donations end up with textile recyclers"
-			},
-			{
-				value: "##",
-				label: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, neque!"
-		}
+			}
 		]
 	
 	return (

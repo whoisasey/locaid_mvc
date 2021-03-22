@@ -1,4 +1,3 @@
-import Back from '../reusables/Back'
 import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
 import HBar from '../reusables/HBar'
 require('dotenv').config()
@@ -26,7 +25,6 @@ const SinglePage = (props) => {
 
 		return (
 			<div className="wrapper">
-				<Back />
 			<div className="single">
 				{/* <div className="single wrapper"> */}
 						<SingleHeader props={ single}/>
@@ -42,7 +40,7 @@ const SinglePage = (props) => {
 
 					<SingleItems props={single} />
 
-					<SingleFinance props={single} />
+					{/* <SingleFinance props={single} /> */}
 					
 					<SingleContact props={single}/>
 

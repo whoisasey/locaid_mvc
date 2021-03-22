@@ -43,7 +43,7 @@ const HBar = () => {
 			{h_bar_links.map((el, index) => {
 				return (
 					<Link to={{
-						pathname: `${history.location.pathname}`,
+						pathname: `${history.location.pathname}/`,
 						hash: `#${el.section}`
 					}} key={index}>{ el.name}</Link>
 					)

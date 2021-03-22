@@ -1,3 +1,4 @@
+import React, { Fragment } from 'react';
 import img from '../../assets/about_page/Illustration/what_we_do_img.png'
 import tshirt from '../../assets/about_page/Icons/1-GoodCondition.png'
 import toosmall from '../../assets/about_page/Icons/2-TooSmall.png'
@@ -35,35 +36,43 @@ export const donations = [
 ]
 const About = () => {
 	return (
-		<div className="wrapper">
-			<div className="about_hero">
+		<Fragment>
+		<div className="about_hero">
 				<h2>What we do</h2>
-				<img src={img} alt="woman on computer with a drink" />
+				<div className="hero_right"><img src={img} alt="woman on computer with a drink" /></div>
 			</div>
-			<div className="about_single">
-				<h3>Why is this important? </h3>
+				<div className="wrapper">
+				<div className="about_single">
+					<div></div>
 				<div>
 					<p>A curated list of organizations and charities that provide full transparency of where your donations go. <br/> <br/> Donors are able to search for organizations and charities based on their own values and beliefs to have maximum impact towards their community.
 					</p>
+						<br/>
+
+				</div>
+				</div>
+
+				<div className="about_single">
+					<h3>Why is this <br/>important? </h3>
+
 					<p>We want to ensure donors are aware where their donations are going too and how much impact their donation is. <br/> <br/>Many charities receive thousands and thousands of donations yearly and still 90% of that donation ends up with textile recyclers and 14 million tonnes goes to land fills. We want to help donors find charities where their donation will go further. </p>
 				</div>
-			</div>
+
 			<div className="about_single">
-				<h3>Tips for clothing donations</h3>
+				<h3>Tips for clothing <br/>donations</h3>
 				<div className="about_icons">
 					{donations.map((el, index) => {
 						return (
-							<div key={index}>
+							<div key={index} className="icon">
 								<img src={el.img[0] } alt="" />
 								<p>{el.text}</p>
 							</div>
 						)
 					})}
 				</div>
-
-
 			</div>
-		</div>
+			</div>
+			</Fragment>
 	)
 }
 

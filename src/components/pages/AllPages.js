@@ -1,7 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 import Loader from '../reusables/Loader'
-import Back from '../reusables/Back'
 
 const AllPages = ({ toRender, search }) => {
 
@@ -18,10 +17,8 @@ const AllPages = ({ toRender, search }) => {
 			);
 		});
 
-		
 		return (
 			<div className="wrapper">
-				<Back />
 				<h3>{search}</h3>
 				<p>{`${toRender.length} items` }</p>
 				{/* filter navigation */}

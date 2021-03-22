@@ -116,34 +116,37 @@ export const SingleContact = ({ props }) => {
 	const {phone, email, address_object, website} = props
 
 	return (
+		<Fragment>
 		<div className="single_contact" id="contact">
 			<h3>Contact</h3>
 		<div className="info">
 			<iframe title="map"
 				frameBorder="0"
-				width="75%"
+				width="100%"
 				height="300px"
 			loading="lazy"
 			allowFullScreen
 			src={`https://www.google.com/maps/embed/v1/place?key=${process.env.REACT_APP_GOOGLE_API}
 				&q=${address_object.street},${address_object.locale}&zoom=16`}>
 			</iframe>
+		</div>
+			</div>
 
-		<div className="contact">
+			<div className="contact">
+				<div></div>
 			<ul>
 				<p>Address:</p>
 				<li>{address_object.street}</li>
 				<li>{address_object.locale}</li>
 				<li>{address_object.postal_code}</li>
 					</ul>
-		</div>
 	</div>
 			<div className="contact_buttons">
 			<a href={website} className="button">Website</a>
 				<a href={`tel:${phone}`} className="button">Call Charity</a>
 				<a href={ `mailto:${email}`} className="button">Email Charity</a>
 			</div>
-		</div>
+			</Fragment>
 	)
 }
 
@@ -182,11 +185,8 @@ export const SingleItems = ({ props }) => {
 		<div className="single_services" id="accepted-items">
 		<h3>Accepted Items</h3>
 		<div>
-			<div className="single_icons">
-				{/* <Icon icon={tshirtIcon} />
-				<Icon icon={tshirtIcon} />
-				<Icon icon={tshirtIcon} /> */}
-			</div>
+				<p>Current Covid Restrictions: <em>{ item_accepted_currently}</em></p>
+
 			<ul>
 				{items_accepted_precovid.map((el, index) => {
 					return (
@@ -194,7 +194,6 @@ export const SingleItems = ({ props }) => {
 					)
 				})}
 				
-			<li>Current Covid Restrictions: <em>{ item_accepted_currently}</em></li>
 			</ul>
 		</div>
 	</div>
