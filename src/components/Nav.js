@@ -20,7 +20,6 @@ const Nav = ({ props, setSearch, logo }) => {
 
 	const searchSpace = (e) => {
 		const { value, textContent } = e.target
-		// console.log(value, textContent)
 	setSearch(value ||textContent)
 	setSearchVal(value || textContent)
 	}
