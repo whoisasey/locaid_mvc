@@ -19,6 +19,9 @@
 
 .mobile_logo {
   width: 100%;
+  // img {
+  object-fit: cover;
+  // }
 }
 .menu {
   @include flexCenter();
