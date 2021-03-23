@@ -13,13 +13,12 @@
   padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  // margin: 0 auto;
   justify-content: space-evenly;
   text-transform: capitalize;
 }
 
 .statistic {
-  width: calc(300px - 2rem);
+  width: calc((100% / 2) - 2rem);
   text-align: center;
   margin: 1rem;
 }
