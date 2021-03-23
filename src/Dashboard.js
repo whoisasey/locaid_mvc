@@ -29,9 +29,9 @@ const Dashboard = ({ props }) => {
 				<NavLink to="/about" className="button">Learn More</NavLink>
 			</div>
 
-				<h3>Featured Charities</h3>
-				{/* <h6>These highlighted charities receive the least funding </h6> */}
 			<div className="featured">
+				<h3>Featured Charities</h3>
+				<h6>Featured charities are those in need of clothing and goods donations due to the lack of funding from the government.</h6>
 					<Featured props={props}/>
 				 </div>
 			</div>

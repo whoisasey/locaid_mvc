@@ -1,16 +1,11 @@
 .stats {
   margin-top: 3rem;
-  h3 {
-    width: 50%;
-  }
+
+  // h3 {
+  // }
 
   span {
     color: $blue-acc;
-  }
-
-  .statistics {
-    // padding: 2rem 0;
-    // width: 80%;
   }
 }
 
@@ -20,13 +15,13 @@
   flex-wrap: wrap;
   // margin: 0 auto;
   justify-content: space-evenly;
+  text-transform: capitalize;
+}
 
-  & > * {
-    // width: calc((100% / 2) - 2rem);
-    width: calc(300px -2rem);
-    text-align: center;
-    margin: 1rem;
-  }
+.statistic {
+  width: calc(300px - 2rem);
+  text-align: center;
+  margin: 1rem;
 }
 
 .value {
