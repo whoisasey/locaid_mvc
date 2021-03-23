@@ -1,11 +1,12 @@
 // tablets
 @media only screen and (min-width: 650px) {
-  .featured {
-    .card {
-      width: calc((100% / 2) - 2rem);
-      margin: 1rem;
-    }
-  }
+  // .featured_cards {
+  //   display: flex;
+  //   .card {
+  //     width: calc((100% / 2) - 2rem);
+  //     // margin: 1rem;
+  //   }
+  // }
 }
 
 // desktop
@@ -46,6 +47,13 @@
       width: calc((100% / 3) - 2rem);
     }
   }
+
+  .featured_cards {
+    .card {
+      width: calc((100% / 2) - 2rem);
+      margin: 1rem;
+    }
+  }
 }
 
 // larger desktop
@@ -54,11 +62,11 @@
     position: static;
     opacity: 1;
   }
-  // .featured {
-  .card {
-    width: calc((100% / 4) - 2rem);
-    // margin: 1rem;
-    // }
+  .featured_cards {
+    .card {
+      width: calc((100% / 4) - 2rem);
+      margin: 1rem;
+    }
   }
 
   .logo {

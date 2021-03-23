@@ -29,7 +29,7 @@ const Featured = ({ props }) => {
 		const featured = fundingArr.filter((_, index) => !newSet.has(index))
 
 		return (
-			<Fragment>
+			<div className="featured_cards">
 				{featured.map(card => {
 					return (
 				<NavLink to={`/page/${card.slug}`} key={card._id} className="card">
@@ -37,7 +37,7 @@ const Featured = ({ props }) => {
 				</NavLink>
 					)
 				})}
-			</Fragment>
+			</div>
 		);
 	}
 }
