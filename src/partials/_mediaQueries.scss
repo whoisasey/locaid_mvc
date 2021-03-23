@@ -67,17 +67,6 @@
     width: calc((100% / 4) - 2rem);
   }
 
-  .single_contact {
-    display: flex;
-    h3 {
-      width: 40%;
-    }
-
-    .info {
-      width: 60%;
-    }
-  }
-
   .contact_buttons {
     & > * {
       width: calc(100% / 3 - 2rem);
@@ -148,5 +137,16 @@
   .single_items,
   .single_contact {
     flex-direction: row;
+  }
+
+  .single_contact {
+    display: flex;
+    h3 {
+      width: 40%;
+    }
+
+    .info {
+      width: 60%;
+    }
   }
 }
