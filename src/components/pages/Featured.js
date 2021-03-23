@@ -43,8 +43,3 @@ const Featured = ({ props }) => {
 }
 
 export default Featured
-
-
-// calculate gov funding for each card
-// if gov funding is <40%, add to new array
-// render only first 4 objects of new array

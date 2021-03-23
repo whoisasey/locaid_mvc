@@ -1,11 +1,28 @@
 /* eslint-disable array-callback-return */
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
+import {Desktop, Mobile} from './reusables/Logo'
+ 
 
-
-const Nav = ({ props, setSearch, Desktop }) => {
+const Nav = ({ props, setSearch }) => {
 	const [searchVal, setSearchVal] = useState('')
+	const [screenWidth, setScreenWidth] = useState(false)
+
+	useEffect(() => {
+		updateImage();
+		window.addEventListener("resize", updateImage)
+	}, [])
+
+	useEffect(() => {
+		updateImage();
+		window.removeEventListener("resize", updateImage)
+	})
+
+	const updateImage = () => {
+		setScreenWidth(window.innerWidth < 480)
+		// console.log(window.innerWidth <480)
+	}
 
 	const cohorts = props.map((item) => {
 		return item.service_cohort
@@ -25,16 +42,17 @@ const Nav = ({ props, setSearch, Desktop }) => {
 	setSearchVal(value || textContent)
 	}
 
-		const reset = (e) => {
-		setSearchVal('')
-		setSearch('')
-		}
+	const reset = (e) => {
+	setSearchVal('')
+	setSearch('')
+	}
+
 	
 	return (
 
 		<div  className="nav">
 			<NavLink to="/" className="logo" onClick={(e) => reset(e)}>
-				<Desktop />
+				{screenWidth ? <Mobile />: <Desktop /> }
 			</NavLink>
 
 			<ul className="menu">

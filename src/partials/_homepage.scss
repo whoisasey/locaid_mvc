@@ -1,31 +1,36 @@
+// mobile first styling
 .header,
 .section {
   @include flexCenter();
 }
 
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   height: 80vh;
   background-color: $light-bg;
-  padding: 3.5rem;
-  // border: $border;
+  padding: 2rem;
   overflow: hidden;
-  padding-left: 6rem;
+  position: relative;
 }
+
+.header_right {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+}
+
 .header_left {
+  z-index: 10;
   h6 {
     margin: 1rem 0;
   }
 }
 
 .section {
-  width: 50%;
   text-align: center;
   margin: 0 auto;
   flex-direction: column;
+  padding: 3rem 0;
 
   .button {
     margin-top: 1rem;
@@ -34,5 +39,12 @@
 
 .featured {
   display: flex;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
+  & > * {
+    margin: 0.75rem 0;
+  }
+
+  .card {
+    width: 100%;
+  }
 }

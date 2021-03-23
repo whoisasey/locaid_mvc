@@ -15,9 +15,11 @@
 
 .logo {
   margin: 1rem;
-  width: 35%;
 }
 
+.mobile_logo {
+  width: 100%;
+}
 .menu {
   @include flexCenter();
   & > * {
