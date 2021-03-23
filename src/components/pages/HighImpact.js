@@ -10,6 +10,7 @@ const HighImpact = ({ props }) => {
 		);
 	} else {
 
+		// eslint-disable-next-line array-callback-return
 		const filterView = props.map(card => {
 			const { revenue } = card;
 			const { gov_funding, receipted_donations, non_receipted_donations, other_charity_gifts, rev_other } = revenue;

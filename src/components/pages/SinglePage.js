@@ -20,7 +20,7 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
-		const { name,  charity_no, summary, mission, vision, services, image_gallery } = single;
+		const { summary, mission, vision, services, image_gallery } = single;
 
 
 		return (
