@@ -1,9 +1,4 @@
 import React, { Fragment } from 'react'
-import blankets from '../../assets/charity_desc/1-Blankets.png'
-
-// import { Icon,  } from '@iconify/react';
-// import tshirtIcon from '@iconify-icons/raphael/tshirt';
-
 
 export const SingleHeader = ({ props }) => {
 	const { name, charity_no, image_gallery } = props;
@@ -164,11 +159,13 @@ export const SingleGallery = ({ props }) => {
 	)
 }
 
-export const SingleServices = ({props}) => {
+export const SingleServices = ({ props }) => {
+	const col = (props.length > 5)
+
 	return (
 		<div className="single_services" id="services">
 			<h3>Services</h3>
-			<ul>
+			<ul className={col ? "list_style_col" : "list_style_one"}>
 				{props.map((el, index) => {
 					return (
 						<li key={ index}>{el}</li>
@@ -179,15 +176,18 @@ export const SingleServices = ({props}) => {
 	)
 }
 
+
 export const SingleItems = ({ props }) => {
 	const { item_accepted_currently, items_accepted_precovid } = props;
+
+	const col = (items_accepted_precovid.length < 5)
 	return (
 		<div className="single_services" id="accepted-items">
 		<h3>Accepted Items</h3>
 		<div>
 				<p>Current Covid Restrictions: <em>{ item_accepted_currently}</em></p>
 
-			<ul>
+			<ul className={col ? "list_style_one" : "list_style_col"}>
 				{items_accepted_precovid.map((el, index) => {
 					return (
 						<li key={index}>{el}</li>

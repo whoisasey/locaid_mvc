@@ -40,7 +40,7 @@ const SinglePage = (props) => {
 
 					<SingleItems props={single} />
 
-					{/* <SingleFinance props={single} /> */}
+					<SingleFinance props={single} />
 					
 					<SingleContact props={single}/>
 
