@@ -63,10 +63,10 @@ const About = () => {
 				<div className="about_icons">
 					{donations.map((el, index) => {
 						return (
-							<div key={index} className="icon">
+							<li key={index} className="icon">
 								<img src={el.img[0] } alt="" />
 								<p>{el.text}</p>
-							</div>
+							</li>
 						)
 					})}
 				</div>
