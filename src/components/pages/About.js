@@ -47,8 +47,6 @@ const About = () => {
 				<div>
 					<p>A curated list of organizations and charities that provide full transparency of where your donations go. <br/> <br/> Donors are able to search for organizations and charities based on their own values and beliefs to have maximum impact towards their community.
 					</p>
-						<br/>
-
 				</div>
 				</div>
 

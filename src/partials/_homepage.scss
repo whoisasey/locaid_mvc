@@ -38,13 +38,15 @@
 }
 
 .featured {
-  display: flex;
-  flex-wrap: wrap;
   & > * {
     margin: 0.75rem 0;
   }
+  .featured_cards {
+    display: flex;
+    flex-wrap: wrap;
 
-  .card {
-    width: 100%;
+    // .card {
+    //   width: 100%;
+    // }
   }
 }
