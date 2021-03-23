@@ -27,6 +27,10 @@
       width: 50%;
     }
   }
+
+  .card {
+    width: calc((100% / 2) - 2rem);
+  }
 }
 
 // larger desktop
@@ -35,16 +39,20 @@
     position: static;
     opacity: 1;
   }
-  .featured {
-    .card {
-      width: calc((100% / 4) - 2rem);
-      margin: 1rem;
-    }
+  // .featured {
+  .card {
+    width: calc((100% / 4) - 2rem);
+    // margin: 1rem;
+    // }
   }
 
   .logo {
     width: 35%;
   }
+
+  // .card {
+  //   width: calc((100% / 3) - 2rem);
+  // }
 }
 
 // @media (max-width: 480px) {

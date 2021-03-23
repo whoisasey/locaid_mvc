@@ -29,7 +29,7 @@ const SinglePage = (props) => {
 				{/* <div className="single wrapper"> */}
 						<SingleHeader props={ single}/>
 					{/* </div> */}
-						<HBar />
+						{/* <HBar /> */}
 					{summary && <SingleAbout summary={summary}/>}
 					
 				{<SingleInfo vision={vision} mission={mission} />}

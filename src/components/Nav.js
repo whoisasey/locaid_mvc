@@ -4,7 +4,9 @@ import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
 import {Desktop, Mobile} from './reusables/Logo'
  
-
+// ! WORK ON MOBILE NAV
+// https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
+// https://codepen.io/maximakymenko/pen/aboWJpX/?editors=1010
 const Nav = ({ props, setSearch }) => {
 	const [searchVal, setSearchVal] = useState('')
 	const [screenWidth, setScreenWidth] = useState(false)
