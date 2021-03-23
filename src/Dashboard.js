@@ -1,10 +1,11 @@
 import React,{Fragment} from 'react'
 import { NavLink } from 'react-router-dom'
 import StatsContainer from './components/homepage/StatsContainer'
+import Featured from './components/pages/Featured'
 import img from './assets/Homepage/Homepage_illustration.png'
 
-const Dashboard = () => {
-
+const Dashboard = ({ props }) => {
+	
 	return (
 		<Fragment>
 			<div className="header">
@@ -18,8 +19,6 @@ const Dashboard = () => {
 				</div>
 			</div>
 
-					{/* <Icon icon={chevronThinDown} /> */}
-
 			<div className="stats wrapper">
 				<StatsContainer />
 
@@ -30,11 +29,11 @@ const Dashboard = () => {
 				<NavLink to="/about" className="button">Learn More</NavLink>
 			</div>
 
-			{/* <div className="stats">
-					<h3>Featured Charities</h3>
-					GALLERY GOES HERE<br/>
-				 Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum perferendis dicta aspernatur deleniti adipisci quasi odio. Mollitia deleniti itaque, quis molestias aliquam rem veritatis repudiandae modi cumque saepe impedit nostrum quasi perferendis facere eaque, libero architecto a assumenda obcaecati amet placeat eveniet dolorum non! Impedit omnis tempora iste voluptatibus labore eos quae pariatur delectus itaque nisi? Laborum debitis est impedit dolorem natus ipsa et, ipsam dolor temporibus reprehenderit aspernatur nulla enim vitae? Hic molestias quam neque magnam placeat obcaecati in accusantium! Magnam aspernatur saepe qui at illum sapiente officia dolores animi ratione rem hic repellat deserunt, quos nihil molestias? Accusantium!
-				 </div> */}
+				<h3>Featured Charities</h3>
+				{/* <h6>These highlighted charities receive the least funding </h6> */}
+			<div className="featured">
+					<Featured props={props}/>
+				 </div>
 			</div>
 		</Fragment>
 	)
