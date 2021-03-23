@@ -9,8 +9,8 @@
   }
 
   .statistics {
-    padding: 2rem 0;
-    width: 80%;
+    // padding: 2rem 0;
+    // width: 80%;
   }
 }
 
@@ -18,13 +18,14 @@
   padding-bottom: 2rem;
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
+  // margin: 0 auto;
   justify-content: space-evenly;
 
   & > * {
-    width: calc((100% / 4));
+    // width: calc((100% / 2) - 2rem);
+    width: calc(300px -2rem);
     text-align: center;
-    margin: 1rem 2rem;
+    margin: 1rem;
   }
 }
 

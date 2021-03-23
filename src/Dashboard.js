@@ -1,8 +1,6 @@
 import React,{Fragment} from 'react'
 import { NavLink } from 'react-router-dom'
 import StatsContainer from './components/homepage/StatsContainer'
-import { Icon } from '@iconify/react';
-import chevronThinDown from '@iconify-icons/entypo/chevron-thin-down';
 import img from './assets/Homepage/Homepage_illustration.png'
 
 const Dashboard = () => {
