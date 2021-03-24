@@ -1,8 +1,10 @@
 import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
+
 import HBar from '../reusables/HBar'
 require('dotenv').config()
 
 const SinglePage = (props) => {
+
 	const slug = props.match.params.slug;
 
 	const data = props.data;
@@ -20,6 +22,8 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
+
+		
 		const { summary, mission, vision, services, image_gallery } = single;
 
 
@@ -29,7 +33,7 @@ const SinglePage = (props) => {
 				{/* <div className="single wrapper"> */}
 						<SingleHeader props={ single}/>
 					{/* </div> */}
-						{/* <HBar /> */}
+						<HBar />
 					{summary && <SingleAbout summary={summary}/>}
 					
 				{<SingleInfo vision={vision} mission={mission} />}
