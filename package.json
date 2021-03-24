@@ -19,11 +19,13 @@
     "mongoose": "^5.12.0",
     "node-sass": "^5.0.0",
     "react": "^17.0.1",
+    "react-burger-menu": "^3.0.6",
     "react-dom": "^17.0.1",
     "react-multilevel-dropdown": "^2.0.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "styled-components": "^5.2.1",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
@@ -57,7 +59,6 @@
     "@iconify-icons/mdi": "^1.1.13",
     "@iconify/react": "^1.1.4",
     "nodemon": "^2.0.7",
-    "react-icons": "^4.2.0",
-    "styled-components": "^5.2.1"
+    "react-icons": "^4.2.0"
   }
 }

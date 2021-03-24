@@ -89,6 +89,14 @@
     > * {
       margin: 0.5rem;
     }
+
+    li {
+      font-size: $base-font-size * 0.9;
+    }
+  }
+
+  button.menu {
+    font-size: $base-font-size * 0.9;
   }
 }
 

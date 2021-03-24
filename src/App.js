@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard';
 import AllPages from './components/pages/AllPages'
 import Nav from './components/Nav/Nav'
+import Sidebar from './components/Nav/Sidebar'
 import MobileSidebar from './components/Nav/MobileSidebar'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
@@ -84,6 +85,7 @@ const App = () => {
 
     return (
       <Router>
+        {/* <Sidebar /> */}
         <Nav props={data} setSearch={setSearch} Desktop={Desktop} categories={categories} locations={locations} setSearchVal={setSearchVal} search={searchSpace}/>
         {/* <MobileSidebar props={data} searchVal={searchVal} setSearchVal={setSearchVal} categories={categories} locations={locations} searchSpace={searchSpace }/> */}
           <Switch>

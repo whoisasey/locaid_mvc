@@ -11,7 +11,7 @@ const Dashboard = ({ props }) => {
 			<div className="header">
 				<div className="header_left">
 					<h1>Donate with high impact.</h1>
-					<h6>Donate your clothes to charities you trust.</h6>
+					<h6>Donate your clothes to local charities you trust in Toronto.</h6>
 					<NavLink to="/all" className="button">Find a Trusted Charity</NavLink>
 				</div>
 				<div className="header_right">
