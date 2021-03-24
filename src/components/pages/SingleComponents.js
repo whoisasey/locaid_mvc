@@ -20,7 +20,7 @@ export const SingleInfo = ({ mission, vision }) => {
 
 	const renderMission = () => {
 		return (
-			<div className="single_items" id="mission">
+			<div className="single_items" name="mission">
 			<h3>Mission</h3>
 			<h6>{mission}</h6>
 			</div>
@@ -29,7 +29,7 @@ export const SingleInfo = ({ mission, vision }) => {
 
 	const renderVision = () => {
 		return (
-				<div className="single_items" id="vision">
+				<div className="single_items" name="vision">
 					<h3>Vision</h3>
 					<h6>{vision}</h6>
 				</div>
@@ -47,7 +47,7 @@ export const SingleInfo = ({ mission, vision }) => {
 
 export const SingleAbout = ({ summary}) => {
 	return (
-		<div className="single_items" id="about">
+		<div className="single_items" name="about">
 			<h3>About</h3>
 			<h6>{summary}</h6>
 		</div>
@@ -87,7 +87,7 @@ export const SingleFinance = ({ props }) => {
 	]
 
 	return (
-		<div className="single_items" id="financial">
+		<div className="single_items" name="financial">
 			<h3>Financial</h3>
 			<div>
 				<div className="statistics">
@@ -112,7 +112,7 @@ export const SingleContact = ({ props }) => {
 
 	return (
 		<Fragment>
-		<div className="single_contact" id="contact">
+		<div className="single_contact"  name="contact">
 			<h3>Contact</h3>
 		<div className="info">
 			<iframe title="map"
@@ -148,7 +148,7 @@ export const SingleContact = ({ props }) => {
 export const SingleGallery = ({ props }) => {
 	const {image_gallery, name} = props
 	return (
-	<div className="single_gallery" id="gallery">
+	<div className="single_gallery" name="gallery">
 		{image_gallery.map((el, index) => {
 			return (
 				<img src={el} alt={`${name} Gallery`} key={index}/>
@@ -163,7 +163,7 @@ export const SingleServices = ({ props }) => {
 	const col = (props.length > 5)
 
 	return (
-		<div className="single_services" id="services">
+		<div className="single_services" name="services">
 			<h3>Services</h3>
 			<ul className={col ? "list_style_col" : "list_style_one"}>
 				{props.map((el, index) => {
@@ -182,7 +182,7 @@ export const SingleItems = ({ props }) => {
 
 	const col = (items_accepted_precovid.length < 5)
 	return (
-		<div className="single_services" id="accepted-items">
+		<div className="single_services" name="accepted-items">
 		<h3>Accepted Items</h3>
 		<div>
 				<p>Current Covid Restrictions: <em>{ item_accepted_currently}</em></p>
