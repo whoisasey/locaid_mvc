@@ -86,7 +86,7 @@ const App = () => {
     return (
       <Router>
         {/* <Sidebar /> */}
-        <Nav props={data} setSearch={setSearch} Desktop={Desktop} categories={categories} locations={locations} setSearchVal={setSearchVal} search={searchSpace}/>
+        <Nav props={data} setSearch={setSearch} Desktop={Desktop} categories={categories} locations={locations} setSearchVal={setSearchVal} searchSpace={searchSpace}/>
         {/* <MobileSidebar props={data} searchVal={searchVal} setSearchVal={setSearchVal} categories={categories} locations={locations} searchSpace={searchSpace }/> */}
           <Switch>
           <Route exact path="/" render={() => <Dashboard props={ data}/>} />
