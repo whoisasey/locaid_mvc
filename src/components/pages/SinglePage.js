@@ -1,6 +1,7 @@
 import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
 
-import HBar from '../reusables/HBar'
+import {HBar, MobileBar} from '../reusables/HBar'
+import { Fragment } from 'react';
 require('dotenv').config()
 
 const SinglePage = (props) => {
@@ -28,12 +29,11 @@ const SinglePage = (props) => {
 
 
 		return (
+			<Fragment>
+				<div className="single">
 			<div className="wrapper">
-			<div className="single">
-				{/* <div className="single wrapper"> */}
 						<SingleHeader props={ single}/>
-					{/* </div> */}
-						<HBar />
+					<HBar />
 					{summary && <SingleAbout summary={summary}/>}
 					
 				{<SingleInfo vision={vision} mission={mission} />}
@@ -50,6 +50,7 @@ const SinglePage = (props) => {
 
 				</div>
 				</div>
+				</Fragment>
 		);
 	}
 }

@@ -1,6 +1,7 @@
-import React,{useEffect} from 'react'
-import * as Scroll from 'react-scroll';
-import { Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import React, { Fragment, useEffect, useState} from 'react'
+// import * as Scroll from 'react-scroll';
+// import {Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
+import {Link, scrollSpy,  } from 'react-scroll'
 
 
 export const h_bar_links = [
@@ -38,29 +39,58 @@ section: 'contact'
 },
 ]
 
-const HBar = ({handleSetActive}) => {
+export const mobile_links = [
+	{
+name: 'About',
+section: 'about'
+},
+{
+name: 'Vision',
+section: 'vision'
+},
+{
+name: 'Accepted Items',
+section: 'accepted-items'
+},
+{
+name: 'Contact',
+section: 'contact'
+},
+]
+
+export const HBar = () => {
+	const [screenWidth, setScreenWidth] = useState(0)
+
 
 	useEffect(() => {
-
+		setScreenWidth(window.innerWidth)
 
 		return () => {
-
 			scrollSpy.update();
 		}
-	}, []);
+	}, [screenWidth]);
 
 
+	const ifMobile = (screenWidth <= 768)
+	
 
-return (
-	<ul className="h_bar">
-		{h_bar_links.map((el, index) => {
+	const desktop = h_bar_links.map((el, index) => {
 			return (
-				<Link activeClass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500}  key={index}>{el.name }</Link>
+				<Link activeclass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500}  key={index}>{el.name }</Link>
 			)
-		})}
+	})
+	
+	const mobile = mobile_links.map((el, index) => {
+			return (
+				<Link activeclass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500}  key={index}>{el.name }</Link>
+			)
+	})
 
-	</ul>
+	return (
+	<Fragment>
+	<ul className="h_bar">
+		{ifMobile ? mobile : desktop}
+			</ul>
+			</Fragment>
 )
 }
-
-export default HBar

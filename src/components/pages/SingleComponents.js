@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { MobileBar } from '../reusables/HBar';
 
 export const SingleHeader = ({ props }) => {
 	const { name, charity_no, image_gallery } = props;
