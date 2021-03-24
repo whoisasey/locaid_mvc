@@ -14,9 +14,9 @@ h3 {
   color: $header;
 }
 h1 {
-  font-size: $base-font-size * 4.15;
+  font-size: $base-font-size * 3;
   font-weight: 600;
-  line-height: $base-line-height * ($base-font-size * 3);
+  line-height: $base-line-height * ($base-font-size * 2);
 }
 
 h2 {
@@ -45,12 +45,12 @@ h6 {
   font-weight: 100;
 }
 
-svg {
-  font-size: $base-font-size * 3;
-  color: lightgray;
-  display: flex;
-  margin: 2rem auto;
-}
+// svg {
+//   font-size: $base-font-size * 3;
+//   color: lightgray;
+//   display: flex;
+//   margin: 2rem auto;
+// }
 
 a {
   text-decoration: none;

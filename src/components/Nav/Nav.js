@@ -1,48 +1,19 @@
-/* eslint-disable array-callback-return */
 import React, {useState, useEffect} from 'react'
 import { NavLink, } from 'react-router-dom';
 import Dropdown from 'react-multilevel-dropdown';
-import {Desktop, Mobile} from './reusables/Logo'
+import {Desktop, Mobile} from '../reusables/Logo'
  
 // ! WORK ON MOBILE NAV
 // https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/
 // https://codepen.io/maximakymenko/pen/aboWJpX/?editors=1010
-const Nav = ({ props, setSearch }) => {
-	const [searchVal, setSearchVal] = useState('')
-	const [screenWidth, setScreenWidth] = useState(false)
+const Nav = ({ props, setSearch, categories, locations, searchVal, setSearchVal, searchSpace }) => {
+	const [screenWidth, setScreenWidth] = useState(0)
 
 	useEffect(() => {
-		updateImage();
-		window.addEventListener("resize", updateImage)
+		setScreenWidth(window.innerWidth)
 	}, [])
 
-	useEffect(() => {
-		updateImage();
-		window.removeEventListener("resize", updateImage)
-	})
-
-	const updateImage = () => {
-		setScreenWidth(window.innerWidth < 480)
-		// console.log(window.innerWidth <480)
-	}
-
-	const cohorts = props.map((item) => {
-		return item.service_cohort
-	})
-	const categories = [...new Set(cohorts)]
-
-	const locationsArr = props.map(item => {
-		if (item.location !== "") 
-			return item.location
-	})
-	
-	const locations = [...new Set(locationsArr)]
-
-	const searchSpace = (e) => {
-		const { value, textContent } = e.target
-	setSearch(value ||textContent)
-	setSearchVal(value || textContent)
-	}
+	const ifMobile = (screenWidth <= 768)
 
 	const reset = (e) => {
 	setSearchVal('')
@@ -52,15 +23,14 @@ const Nav = ({ props, setSearch }) => {
 	
 	return (
 
-		<div  className="nav">
+		<nav  className="nav_desktop">
 			<NavLink to="/" className="logo" onClick={(e) => reset(e)}>
-				{screenWidth ? <Mobile />: <Desktop /> }
+				{ifMobile? <Mobile /> :<Desktop />}
 			</NavLink>
 
 			<ul className="menu">
-				<NavLink to="/search">
-					<input type="text" placeholder="&#x1F50D; Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
-				</NavLink>
+				<NavLink to="/about">About</NavLink>
+
 				
 				<Dropdown
 					className="menu"
@@ -109,9 +79,12 @@ const Nav = ({ props, setSearch }) => {
 					</Dropdown.Item>
 				</Dropdown>
 				
-				<NavLink to="/about">About</NavLink>
+				
+							<NavLink to="/search">
+					<input type="text" placeholder="&#x1F50D; Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
+				</NavLink>
 			</ul>
-		</div>
+		</nav>
 	)
 }
 

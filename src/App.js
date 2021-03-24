@@ -2,7 +2,8 @@ import React,{useState,useEffect, useCallback} from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Dashboard from './Dashboard';
 import AllPages from './components/pages/AllPages'
-import Nav from './components/Nav'
+import Nav from './components/Nav/Nav'
+import MobileSidebar from './components/Nav/MobileSidebar'
 import SinglePage from './components/pages/SinglePage';
 import Footer from './components/Footer'
 import About from './components/pages/About'
@@ -14,8 +15,18 @@ import {Desktop} from './components/reusables/Logo'
 const App = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("All");
-  // console.log(search)
+  const [cohorts ] = useState([])
+  const [categories, setCategories] = useState([])
+  const [locationArr ] = useState([])
+  const [locations, setLocation] = useState([])
+  	const [searchVal, setSearchVal] = useState('')
 
+	const searchSpace = (e) => {
+		const { value, textContent } = e.target
+	setSearch(value ||textContent)
+	setSearchVal(value || textContent)
+  }
+  
   const getData = useCallback(async function () {
     try {
       const response = await fetch('/api/locaid');
@@ -32,6 +43,18 @@ const App = () => {
   useEffect(() => {
     getData();
   }, [getData]);
+
+  useEffect(() => {
+    // eslint-disable-next-line array-callback-return
+    data.map((item) => {
+      cohorts.push(item.service_cohort)
+      locationArr.push(item.location)
+    })
+    
+    setCategories([...new Set(cohorts)])
+    setLocation([...new Set(locationArr)])
+  }, [cohorts, data, locationArr])
+
 
   if (data === []) {
     return (
@@ -61,7 +84,8 @@ const App = () => {
 
     return (
       <Router>
-        <Nav props={data} setSearch={setSearch} Desktop={Desktop} />
+        <Nav props={data} setSearch={setSearch} Desktop={Desktop} categories={categories} locations={locations} setSearchVal={setSearchVal} search={searchSpace}/>
+        {/* <MobileSidebar props={data} searchVal={searchVal} setSearchVal={setSearchVal} categories={categories} locations={locations} searchSpace={searchSpace }/> */}
           <Switch>
           <Route exact path="/" render={() => <Dashboard props={ data}/>} />
             <Route path="/all" render={() => <AllPages toRender={toRender}  search={search}/>} />
@@ -72,7 +96,6 @@ const App = () => {
             <Route path="/location/:locale" render={() => <AllPages toRender={toRender} search={search}/> }/>
             <Route path="/high-impact" render={() => <HighImpact props={ toRender}/>} />
           <Route path="/about" component={About} />
-          {/* <Route path="/design" component={Design }/> */}
           </Switch>
         <Footer />
       </Router>
