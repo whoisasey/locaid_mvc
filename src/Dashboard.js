@@ -23,8 +23,7 @@ const Dashboard = ({ props }) => {
 				<StatsContainer />
 
 			<div className="section">
-				<p>The biggest concern with charities is transparency.
-				Learn how we’re making sure your donation goes to those in need.</p>
+				<p>Learn how we make sure your donation goes to those in need.</p>
 				<NavLink to="/about" className="button">Learn More</NavLink>
 			</div>
 
