@@ -21,7 +21,100 @@ const App = () => {
   const [categories, setCategories] = useState([])
   const [locationArr ] = useState([])
   const [locations, setLocation] = useState([])
-  	const [searchVal, setSearchVal] = useState('')
+  const [searchVal, setSearchVal] = useState('')
+  const locationsList = [ {
+      id: 11,
+      name: "Downtown",
+      value: "Downtown"
+      },
+      {
+      id: 12,
+      name: "East Toronto",
+      value: "East_Toronto"
+      },
+      {
+      id: 13,
+      name: "West Toronto",
+      value: "West_Toronto"
+      }, {
+      id: 14,
+      name: "North Toronto",
+      value: "North_Toronto"
+      }]
+  const [filterList, setFilterList] = useState([
+        {
+          id: 11,
+          name: "Part Time",
+          value: "PART_TIME"
+        },
+        {
+          id: 12,
+          name: "Full Time",
+          value: "FULL_TIME"
+        },
+        {
+          id: 13,
+          name: "Freelancer",
+          value: "FREELANCER"
+        }
+      ])
+	const [searchLists, setSearchLists] = useState([
+        {
+          id: 1,
+          type: "PART_TIME",
+          name: "Akash",
+          location: "bangalore",
+          experience: 1
+        },
+        {
+          id: 2,
+          type: "PART_TIME",
+          name: "feroz",
+          location: "mumbai",
+          experience: 3
+        },
+        {
+          id: 3,
+          type: "FULL_TIME",
+          name: "Farheen",
+          location: "agra",
+          experience: 5
+        },
+        {
+          id: 4,
+          type: "FREELANCER",
+          name: "Raju",
+          location: "chennai",
+          experience: 6
+        },
+        {
+          id: 5,
+          type: "FULL_TIME",
+          name: "Asif",
+          location: "vegas",
+          experience: 7
+        }
+		])
+	const [activeFilter, setActiveFilter] = useState([])
+	
+	const  onFilterChange = (filter) => {
+    if (filter === "ALL") {
+      if (activeFilter.length === locationsList.length) {
+        setActiveFilter([])
+			} else {
+				setActiveFilter(locationsList.map(filter=> filter.value))
+      }
+    } else {
+      if (activeFilter.includes(filter)) {
+        const filterIndex = activeFilter.indexOf(filter);
+        const newFilter = [...activeFilter];
+        newFilter.splice(filterIndex, 1);
+				setActiveFilter(newFilter)
+			} else {
+				setActiveFilter([...activeFilter, filter])
+      }
+    }
+  }
 
 	const searchSpace = (e) => {
 		const { value, textContent } = e.target
@@ -82,6 +175,20 @@ const App = () => {
         }
       }
     });
+
+    let filteredList;
+    if (
+      activeFilter.length === 0 ||
+      activeFilter.length === locationsList.length
+    ) {
+      filteredList = data;
+    } else {
+      // eslint-disable-next-line no-unused-vars
+      console.log(activeFilter)
+      filteredList = data.filter(item =>
+        activeFilter.includes(item.type)
+      );
+    }
   
 
     return (
@@ -92,7 +199,7 @@ const App = () => {
         {/* <MobileSidebar props={data} searchVal={searchVal} setSearchVal={setSearchVal} categories={categories} locations={locations} searchSpace={searchSpace }/> */}
           <Switch>
           <Route exact path="/" render={() => <Dashboard props={ data}/>} />
-            <Route path="/all" render={() => <AllPages toRender={toRender}  search={search}/>} />
+          <Route path="/all" render={() => <AllPages toRender={toRender} search={search} activeFilter={activeFilter} locationsList={locationsList} filteredList={filteredList} onChange={onFilterChange} locations={locations}/> } />
             <Route exact path="/page/:slug" render={(props) => <SinglePage {...props} data={data} />} />
             <Route path="/search" render={() => <AllPages toRender={toRender} search={search} />} />
             <Route path="/categories/:cohort" render={() => <AllPages toRender={toRender}  search={search}/>} />

@@ -12,7 +12,7 @@ const Dashboard = ({ props }) => {
 				<div className="header_left">
 					<h1>Donate with high impact.</h1>
 					<h6>Donate your clothes to local charities you trust in Toronto.</h6>
-					<NavLink to="/all" className="button">Find a Trusted Charity</NavLink>
+					<NavLink to="/all" className="button">Find the closest charity near me</NavLink>
 				</div>
 				<div className="header_right">
 					<img src={img } alt="cartoon woman carrying a box of clothing to donate" />
@@ -24,7 +24,7 @@ const Dashboard = ({ props }) => {
 
 			<div className="section">
 				<p>The biggest concern with charities is transparency.
-				Learn how we’re are making sure your 
+				Learn how we’re making sure your 
 				100% of donation goes to those in need.</p>
 				<NavLink to="/about" className="button">Learn More</NavLink>
 			</div>
