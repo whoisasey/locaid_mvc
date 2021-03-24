@@ -80,6 +80,7 @@ button.menu {
   max-width: 1400px;
   width: 85%;
   margin: 0 auto;
+  position: relative;
 }
 
 .button {
@@ -91,15 +92,43 @@ button.menu {
   display: inline-block;
 }
 
-.back_btn {
-  background: none;
-  border: none;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  text-transform: uppercase;
+// .back_btn {
+//   background: none;
+//   border: none;
+//   display: flex;
+//   justify-content: flex-start;
+//   align-items: center;
+//   text-transform: uppercase;
 
-  svg {
-    margin: 0;
+//   svg {
+//     margin: 0;
+//   }
+// }
+
+.scrollTop {
+  position: fixed;
+  right: 100px;
+  // width: 100%;
+  bottom: 20px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
   }
 }

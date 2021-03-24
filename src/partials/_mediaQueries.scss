@@ -98,10 +98,19 @@
   button.menu {
     font-size: $base-font-size * 0.9;
   }
+
+  .h_bar {
+    a {
+      font-size: $base-font-size;
+    }
+  }
 }
 
 // larger desktop
 @media only screen and (min-width: 1024px) {
+  // .mobile_h_bar {
+  //   display: none;
+  // }
   .nav_desktop {
     display: inline-block;
     width: 100%;

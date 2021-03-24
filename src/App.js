@@ -10,7 +10,8 @@ import Footer from './components/Footer'
 import About from './components/pages/About'
 import HighImpact from './components/pages/HighImpact';
 import Loader from './components/reusables/Loader'
-import {Desktop} from './components/reusables/Logo'
+import { Desktop } from './components/reusables/Logo'
+import ScrollArrow from './components/reusables/ScrollArrow'
 
 
 const App = () => {
@@ -85,6 +86,7 @@ const App = () => {
 
     return (
       <Router>
+        <ScrollArrow />
         {/* <Sidebar /> */}
         <Nav props={data} setSearch={setSearch} Desktop={Desktop} categories={categories} locations={locations} setSearchVal={setSearchVal} searchSpace={searchSpace}/>
         {/* <MobileSidebar props={data} searchVal={searchVal} setSearchVal={setSearchVal} categories={categories} locations={locations} searchSpace={searchSpace }/> */}
