@@ -18,14 +18,14 @@ const StatsContainer = () => {
 	return (
 		<div className="single_section">
 				<div className="single_left">
-					<h3>Does 100% of your <span>clothing</span> donation go to charity?</h3>
+					<h5>Does 100% of your <span>clothing</span> donation go to charity?</h5>
 				</div>
 				<div className="statistics single_right">
 				{stats.map((el, index) => {
 					return (
 						<div className="statistic" key={index}>
-							<h3 className="value"><strong>{el.value}</strong></h3>
-							<h6 className="label">{ el.label}</h6>
+							<h6 className="value"><strong>{el.value}</strong></h6>
+							<p className="label">{ el.label}</p>
 						</div>
 					)
 				})}

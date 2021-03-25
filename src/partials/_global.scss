@@ -9,7 +9,9 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5 {
   font-family: $base-font-family;
   color: $header;
 }
@@ -25,26 +27,27 @@ h2 {
 }
 
 h3 {
-  font-size: $base-font-size * 4;
+  font-size: $base-font-size * 3.5;
   line-height: $base-line-height * ($base-font-size * 2.5);
 }
 
 h4 {
   font-size: $base-font-size * 3;
-  font-weight: 100;
-  line-height: $base-line-height * ($base-font-size * 1.75);
+  line-height: $base-line-height * ($base-font-size * 2);
 }
 
 h5 {
   font-size: $base-font-size * 2.5;
-  font-weight: 100;
   line-height: $base-line-height * ($base-font-size * 1.5);
 }
 
-h6,
 li {
-  font-size: $base-font-size * 1.5;
   font-weight: 100;
+}
+
+h6 {
+  font-size: $base-font-size * 1.5;
+  font-weight: lighter;
   line-height: $base-line-height * ($base-font-size * 1.5);
 }
 
