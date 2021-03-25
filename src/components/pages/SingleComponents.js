@@ -9,7 +9,7 @@ export const SingleHeader = ({ props }) => {
 		<div className="single_header">
 			{image_header}
 		<div className="hero_text">
-			<h3>{name}</h3>
+			<h4>{name}</h4>
 			<strong>Charity/BN: {charity_no}</strong>
 		</div>
 
@@ -21,18 +21,26 @@ export const SingleInfo = ({ mission, vision }) => {
 
 	const renderMission = () => {
 		return (
-			<div className="single_items" name="mission">
-			<h3>Mission</h3>
-			<h6>{mission}</h6>
+			<div className="single_section" name="mission">
+			<div className="single_left">
+				<h4>Mission</h4>
+			</div>
+			<div className="single_right">
+				<h6>{mission}</h6>
+			</div>
 			</div>
 		)
 	}
 
 	const renderVision = () => {
 		return (
-				<div className="single_items" name="vision">
-					<h3>Vision</h3>
-					<h6>{vision}</h6>
+				<div className="single_section" name="vision">
+					<div className="single_left">
+						<h4>Vision</h4>
+					</div>
+					<div className="single_right">
+						<h6>{vision}</h6>
+					</div>
 				</div>
 		)
 	}
@@ -48,9 +56,13 @@ export const SingleInfo = ({ mission, vision }) => {
 
 export const SingleAbout = ({ summary}) => {
 	return (
-		<div className="single_items" name="about">
-			<h3>About</h3>
-			<h6>{summary}</h6>
+		<div className="single_section" name="about">
+			<div className="single_left">
+				<h4>About</h4>
+			</div>
+			<div className="single_right">
+				<h6>{summary}</h6>
+			</div>
 		</div>
 	)
 }
@@ -88,20 +100,22 @@ export const SingleFinance = ({ props }) => {
 	]
 
 	return (
-		<div className="single_items" name="financial">
-			<h3>Financial</h3>
-			<div>
+		<div className="single_section" name="financial">
+			<div className="single_left">
+				<h4>Financial</h4>
+			</div>
+			<div className="single_right">
 				<div className="statistics">
 					{financeArr.map((item, index) => {
 						return (
 							<div className="statistic" key={index}>
-								<h3 className="value"><strong>{item.value}</strong></h3>
-								<div className="label">{item.label}</div>
+								<h4 className="value"><strong>{item.value}</strong></h4>
+								<h6 className="label">{item.label}</h6>
 						</div>
 						)
 					})}
 				</div>
-				<p>Financial information is provided by Statistics Canada on a yearly basis. {name } believes in the transparency of their financial information to ensure donors are aware where their donations are going towards. If you require further information, please email the charity.</p>
+				<h6>Financial information is provided by Statistics Canada on a yearly basis. {name } believes in the transparency of their financial information to ensure donors are aware where their donations are going towards. If you require further information, please email the charity.</h6>
 			</div>
 		</div>
 
@@ -113,9 +127,11 @@ export const SingleContact = ({ props }) => {
 
 	return (
 		<Fragment>
-		<div className="single_contact"  name="contact">
-			<h3>Contact</h3>
-		<div className="info">
+		<div className="single_section"  name="contact">
+			<div className="single_left">
+				<h4>Contact</h4>
+			</div>
+		<div className="info single_right">
 			<iframe title="map"
 				frameBorder="0"
 				width="100%"
@@ -131,7 +147,7 @@ export const SingleContact = ({ props }) => {
 			<div className="contact">
 				<div></div>
 			<ul>
-				<p>Address:</p>
+				<h6>Address:</h6>
 				<li>{address_object.street}</li>
 				<li>{address_object.locale}</li>
 				<li>{address_object.postal_code}</li>
@@ -164,15 +180,19 @@ export const SingleServices = ({ props }) => {
 	const col = (props.length > 5)
 
 	return (
-		<div className="single_services" name="services">
-			<h3>Services</h3>
-			<ul className={col ? "list_style_col" : "list_style_one"}>
-				{props.map((el, index) => {
-					return (
-						<li key={ index}>{el}</li>
-						)
-				})}
-			</ul>
+		<div className="single_section" name="services">
+			<div className="single_left">
+				<h4>Services</h4>
+			</div>
+			<div className="single_right">
+				<ul className={col ? "list_style_col" : "list_style_one"}>
+					{props.map((el, index) => {
+						return (
+							<li key={ index}>{el}</li>
+							)
+					})}
+				</ul>
+			</div>
 		</div>		
 	)
 }
@@ -183,9 +203,11 @@ export const SingleItems = ({ props }) => {
 
 	const col = (items_accepted_precovid.length < 5)
 	return (
-		<div className="single_services" name="accepted-items">
-		<h3>Accepted Items</h3>
-		<div>
+		<div className="single_section" name="accepted-items">
+		<div className="single_left">
+			<h4>Accepted Items</h4>
+		</div>
+		<div className="single_right">
 				<p>Current Covid Restrictions: <em>{ item_accepted_currently}</em></p>
 
 			<ul className={col ? "list_style_one" : "list_style_col"}>
