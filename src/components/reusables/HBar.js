@@ -86,7 +86,7 @@ export const HBar = () => {
 	
 	const mobile = mobile_links.map((el, index) => {
 			return (
-				<Link activeclass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500}  key={index}>{el.name }</Link>
+				<Link activeclass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500} tabIndex="0" key={index}>{el.name }</Link>
 			)
 	})
 
