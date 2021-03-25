@@ -9,7 +9,7 @@
   }
 
   .button {
-    margin: 1rem;
+    margin: 0.5rem;
     text-align: center;
   }
 
@@ -60,6 +60,12 @@
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 0.4rem 0;
+  }
 }
 
 .list_style_col {
@@ -102,8 +108,17 @@
   margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
+  // flex-direction: column;
 
   & > * {
     width: calc(100% - 2rem);
   }
+}
+
+.donate_cta {
+  // position: absolute;
+  // bottom: 0;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // width: 100%;
 }

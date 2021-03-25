@@ -26,7 +26,11 @@ const SinglePage = (props) => {
 
 		
 		const { summary, mission, vision, services, image_gallery } = single;
-
+// ! 
+		// end of the page
+		// add button for future steps - find directions or "locate closest charity"
+		// donate button
+		// complete the story
 
 		return (
 			<Fragment>
@@ -50,7 +54,6 @@ const SinglePage = (props) => {
 					<SingleFinance props={single} />
 					
 					<SingleContact props={single}/>
-
 				</div>
 				</div>
 				</Fragment>

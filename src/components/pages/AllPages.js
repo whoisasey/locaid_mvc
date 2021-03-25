@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 import Loader from '../reusables/Loader'
 
-const AllPages = ({ toRender, search, activeFilter, filterList, filteredList, onChange, locationsList }) => {
+const AllPages = ({ toRender, search }) => {
 
 	
 	if (toRender === []) {
@@ -12,7 +12,7 @@ const AllPages = ({ toRender, search, activeFilter, filterList, filteredList, on
 		} else {
 		const allMapped = toRender.map(card => {
 			return (
-				<NavLink to={`/page/${card.slug}`} key={card._id} className="card">
+				<NavLink to={`/page/${card.slug}`} key={card._id} className="card" rel="noreferrer" target="_blank">
 					<SingleCard card={card} />
 				</NavLink>
 			);
