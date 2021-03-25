@@ -1,5 +1,4 @@
 /* eslint-disable array-callback-return */
-import React, { Fragment } from 'react'
 import Loader from '../reusables/Loader'
 import { NavLink } from 'react-router-dom';
 import SingleCard from '../pages/SingleCard'

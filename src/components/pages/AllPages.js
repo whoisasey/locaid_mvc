@@ -21,41 +21,13 @@ const AllPages = ({ toRender, search, activeFilter, filterList, filteredList, on
 
 		return (
 			<div className="wrapper">
-				  {/* <div className="searchContainer">
-        <form>
-          <label htmlFor="myInput">All</label>
-          <input
-            id="myInput"
-            type="checkbox"
-            onClick={() => onChange("ALL")}
-            checked={activeFilter.length === locationsList.length}
-          />
-          {locationsList.map((filter, index) => (
-            <li key={index}>
-              <label htmlFor={filter.id}>{filter.name}</label>
-              <input
-                id={filter.id}
-                type="checkbox"
-                checked={activeFilter.includes(filter.value)}
-                onClick={() => onChange(filter.value)}
-              />
-            </li>
-          ))}
-        </form>
-        <ul >
-          {filteredList.map(item => (
-              <li key={item.id}>
-                {item.name}
-              </li>
-          ))}
-        </ul>
-      </div> */}
-				<h3>{search}</h3>
-				<p>{`${toRender.length} items` }</p>
-				<div className="cards">
-
+        <div className="container">
+          <h3>{search}</h3>
+          <p>{`${toRender.length} items` }</p>
+          <div className="cards">
 					{allMapped}
-				</div>
+          </div>
+        </div>
 			</div>
 		);
 	}

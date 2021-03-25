@@ -1,7 +1,7 @@
 import React,{Fragment} from 'react'
 import { NavLink } from 'react-router-dom'
 import StatsContainer from './components/homepage/StatsContainer'
-import Featured from './components/pages/Featured'
+import Featured from './components/homepage/Featured'
 import img from './assets/Homepage/Homepage_illustration.png'
 import badge from './assets/Homepage/Artboard_12x.png'
 
@@ -25,7 +25,7 @@ const Dashboard = ({ props }) => {
 
 			<div className="featured">
 				<h4>Featured Charities</h4>
-				<h6>Featured charities are those in need of clothing and goods donations due to the lack of funding from the government.</h6>
+				<h6>Featured charities are the top four charities with the least funding from the government.</h6>
 					<Featured props={props}/>
 			</div>
 			</div>

@@ -1,8 +1,9 @@
 .h_bar {
+  z-index: 20;
   display: block;
   background: white;
-  margin-top: 2rem;
-  padding: 1rem 0;
+  // margin-top: 1rem;
+  // padding: 1rem 0;
   border-top: 1px solid $primaryfont;
   border-bottom: 1px solid $primaryfont;
   display: flex;
@@ -11,26 +12,17 @@
   position: sticky;
   top: 0;
   left: 0;
+  cursor: pointer;
 
   a {
     font-size: 1rem;
+    padding: 1rem;
+
+    &:hover {
+      background-color: rgba(175, 212, 214, 1);
+    }
+  }
+  .active {
+    border-bottom: 5px $header solid;
   }
 }
-
-// // .single {
-// .mobile_h_bar {
-//   // display: block;
-//   position: sticky;
-//   top: 0;
-//   left: 0;
-//   z-index: 10;
-//   width: 50px;
-//   display: flex;
-//   align-items: flex-start;
-//   flex-direction: column;
-//   a {
-//     // position: sticky;
-//     margin: 0.25rem;
-//   }
-// }
-// // }

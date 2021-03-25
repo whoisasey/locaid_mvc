@@ -3,7 +3,7 @@
 
   img {
     width: 50%;
-    margin: 1rem auto;
+    // margin: 1rem auto;
   }
 
   em {
@@ -21,11 +21,28 @@
 
     li {
       font-size: $base-font-size * 1.5;
+      margin: 0.5rem;
     }
   }
 
   .statistics {
     margin-bottom: 3rem;
+  }
+
+  .banner {
+    padding: 0.75rem 0;
+    background-color: $header;
+    @include flexCenter();
+    // margin: 3rem auto;
+    p {
+      color: white;
+    }
+
+    strong {
+      color: $accent;
+      text-transform: capitalize;
+      font-weight: bold;
+    }
   }
 }
 
@@ -96,7 +113,7 @@
 }
 
 .single_gallery {
-  padding-top: 5rem;
+  // padding-top: 5rem;
   display: flex;
   flex-wrap: wrap;
 

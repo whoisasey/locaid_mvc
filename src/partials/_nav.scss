@@ -55,8 +55,8 @@
 
   li {
     list-style-type: none;
-    font-size: $base-font-size * 0.7;
-    margin: 1rem;
+    font-size: $base-font-size;
+    // margin: 1rem;
 
     &:hover {
       background-color: rgba(175, 212, 214, 1);

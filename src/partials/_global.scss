@@ -67,6 +67,7 @@ a {
 footer {
   height: 10vh;
   background-color: $primaryfont;
+  // position: sticky;
   // margin-top: 5rem;
 }
 
@@ -87,6 +88,10 @@ button.menu {
   width: 85%;
   margin: 0 auto;
   position: relative;
+}
+
+.container {
+  padding-top: 4rem;
 }
 
 .button {

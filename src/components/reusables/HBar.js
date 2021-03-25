@@ -1,21 +1,21 @@
 import React, { Fragment, useEffect, useState} from 'react'
 // import * as Scroll from 'react-scroll';
 // import {Link, Element, Events, animateScroll as scroll, scrollSpy, scroller } from 'react-scroll'
-import {Link, scrollSpy,  } from 'react-scroll'
+import {Link, Events, scrollSpy,  } from 'react-scroll'
 
 
 export const h_bar_links = [
+// {
+// name: 'About',
+// section: 'about'
+// },
 {
-name: 'About',
+name: 'Mission',
 section: 'about'
 },
 {
-name: 'Mission',
-section: 'mission'
-},
-{
 name: 'Vision',
-section: 'vision'
+section: 'mission'
 },
 {
 name: 'Gallery',
@@ -58,18 +58,22 @@ section: 'contact'
 },
 ]
 
+
+// on scroll click, set property to arguments[0]
+// based on argument, set classname of bar to active/not-active
+
 export const HBar = () => {
 	const [screenWidth, setScreenWidth] = useState(0)
 
 
 	useEffect(() => {
+
 		setScreenWidth(window.innerWidth)
 
 		return () => {
 			scrollSpy.update();
 		}
 	}, [screenWidth]);
-
 
 	const ifMobile = (screenWidth <= 1024)
 	

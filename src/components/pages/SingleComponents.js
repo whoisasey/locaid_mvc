@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react'
-import { MobileBar } from '../reusables/HBar';
 
 export const SingleHeader = ({ props }) => {
 	const { name, charity_no, image_gallery } = props;
@@ -9,7 +8,7 @@ export const SingleHeader = ({ props }) => {
 		<div className="single_header">
 			{image_header}
 		<div className="hero_text">
-			<h4>{name}</h4>
+			<h3>{name}</h3>
 			<strong>Charity/BN: {charity_no}</strong>
 		</div>
 
@@ -21,7 +20,7 @@ export const SingleInfo = ({ mission, vision }) => {
 
 	const renderMission = () => {
 		return (
-			<div className="single_section" name="mission">
+			<div className="single_section" name="about">
 			<div className="single_left">
 				<h4>Mission</h4>
 			</div>
@@ -34,7 +33,7 @@ export const SingleInfo = ({ mission, vision }) => {
 
 	const renderVision = () => {
 		return (
-				<div className="single_section" name="vision">
+				<div className="single_section" name="mission">
 					<div className="single_left">
 						<h4>Vision</h4>
 					</div>
@@ -199,7 +198,7 @@ export const SingleServices = ({ props }) => {
 
 
 export const SingleItems = ({ props }) => {
-	const { item_accepted_currently, items_accepted_precovid } = props;
+	const { items_accepted_precovid } = props;
 
 	const col = (items_accepted_precovid.length < 5)
 	return (
@@ -208,7 +207,6 @@ export const SingleItems = ({ props }) => {
 			<h4>Accepted Items</h4>
 		</div>
 		<div className="single_right">
-				<p>Current Covid Restrictions: <em>{ item_accepted_currently}</em></p>
 
 			<ul className={col ? "list_style_one" : "list_style_col"}>
 				{items_accepted_precovid.map((el, index) => {

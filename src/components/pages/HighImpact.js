@@ -30,10 +30,12 @@ const HighImpact = ({ props }) => {
 
 		return (
 			<div className="wrapper">
-				{/* <h2>high impact</h2> */}
-				<div className="cards">
-
-				{filterView}
+				<div className="container">
+					<h3>High Impact</h3>
+					<h6>Charities featured in the high impact page are organizations that are in need of more clothing and goods donations. The need for additional donations is determined by the lack of funding provided by the government.</h6>
+					<div className="cards">
+					{filterView}
+					</div>
 				</div>
 			</div>
 		);

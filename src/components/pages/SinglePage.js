@@ -1,7 +1,7 @@
+import { Fragment } from 'react';
 import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
 
 import {HBar, MobileBar} from '../reusables/HBar'
-import { Fragment } from 'react';
 require('dotenv').config()
 
 const SinglePage = (props) => {
@@ -32,7 +32,10 @@ const SinglePage = (props) => {
 			<Fragment>
 				<div className="single">
 			<div className="wrapper">
-						<SingleHeader props={ single}/>
+						<SingleHeader props={single} />
+			<div className="banner">
+				<p>Current Covid Restrictions: <strong>{ single.item_accepted_currently}</strong></p>
+				</div>
 					<HBar />
 					{summary && <SingleAbout summary={summary}/>}
 					
