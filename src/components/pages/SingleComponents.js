@@ -1,7 +1,14 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import {NavLink} from 'react-router-dom'
+import {Link, scrollSpy,  } from 'react-scroll'
 
 export const SingleHeader = ({ props }) => {
-	const { name, charity_no, image_gallery } = props;
+
+	useEffect(() => {
+			scrollSpy.update();
+	}, [])
+
+	const { name, charity_no, image_gallery, website } = props;
 	const image_header = image_gallery ? 	<img src={image_gallery[2]} alt={name}/> : null
 
 	return (
@@ -9,8 +16,13 @@ export const SingleHeader = ({ props }) => {
 			{image_header}
 		<div className="hero_text">
 			<h3>{name}</h3>
-			<strong>Charity/BN: {charity_no}</strong>
+				<strong>Charity/BN: {charity_no}</strong>
+				<div className="donate_cta">
+					<Link activeClass="active" className="button" to="contact" spy={true} smooth={true} offset={50} duration={500} >
+								Donate</Link>
+				</div>
 		</div>
+
 
 	</div>
 )
@@ -128,9 +140,11 @@ export const SingleContact = ({ props }) => {
 		<Fragment>
 		<div className="single_section"  name="contact">
 			<div className="single_left">
-				<h4>Contact</h4>
+					<h4>Contact</h4>
+
+
 			</div>
-		<div className="info single_right">
+				<div className="info single_right">
 			<iframe title="map"
 				frameBorder="0"
 				width="100%"
@@ -150,13 +164,14 @@ export const SingleContact = ({ props }) => {
 				<li>{address_object.street}</li>
 				<li>{address_object.locale}</li>
 				<li>{address_object.postal_code}</li>
-					</ul>
+				</ul>
 	</div>
-			<div className="contact_buttons">
-			<a href={website} className="button">Website</a>
-				<a href={`tel:${phone}`} className="button">Call Charity</a>
-				<a href={ `mailto:${email}`} className="button">Email Charity</a>
+	<div className="contact_buttons">
+			<a href={website} className="button" rel="noreferrer" target="_blank" >Website</a>
+				<a href={`tel:${phone}`} className="button" rel="noreferrer" target="_blank">Call Charity</a>
+				<a href={ `mailto:${email}`} className="button" rel="noreferrer" target="_blank">Email Charity</a>
 			</div>
+
 			</Fragment>
 	)
 }
