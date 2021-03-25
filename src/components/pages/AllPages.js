@@ -1,4 +1,3 @@
-import React,{ useState, Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
 import SingleCard from './SingleCard'
 import Loader from '../reusables/Loader'

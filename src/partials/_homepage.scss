@@ -4,22 +4,24 @@
   @include flexCenter();
 }
 
-.header {
-  height: 80vh;
+.header,
+.about_hero {
   background-color: $light-bg;
   padding: 2rem;
-  // overflow: hidden;
+  align-items: baseline;
   position: relative;
 }
 
-.header_right {
+.header_right,
+.hero_right {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   opacity: 0.4;
 }
 
-.header_left {
+.header_left,
+.hero_left {
   z-index: 10;
 
   & > * {
@@ -28,16 +30,18 @@
 }
 
 .featured {
-  // margin: 7rem 0;
   & > * {
     margin: 1rem 0;
   }
   .featured_cards {
     display: flex;
     flex-wrap: wrap;
+  }
+}
 
-    // .card {
-    //   width: 100%;
-    // }
+.statistics.single_right {
+  margin: 0 auto;
+  & > * {
+    width: calc((100% / 3) - 2rem);
   }
 }

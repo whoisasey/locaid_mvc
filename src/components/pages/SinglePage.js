@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
 
-import {HBar, MobileBar} from '../reusables/HBar'
+import {HBar} from '../reusables/HBar'
 require('dotenv').config()
 
 const SinglePage = (props) => {
