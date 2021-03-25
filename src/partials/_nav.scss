@@ -1,56 +1,31 @@
-.nav_desktop {
-  a {
-    font-size: 1rem;
-  }
-  // display: none;
-}
-// .mobile_nav_header {
-//   background: $light;
-//   height: 80px;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-// }
-
-// .mobile_nav_link {
-//   margin-left: 2rem;
-//   font-size: 2rem;
-//   height: 80px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-// }
-// .nav_mobile {
-//   display: block;
-// }
 .logo {
-  padding-left: 4rem;
-  // display: inline-block;
-  // margin: 0 auto;
-
-  img {
-    padding: 0.5rem;
-    margin: 1rem auto;
-    height: 10vh;
-    object-fit: contain;
-    // height: auto;
-  }
+  display: inline-block;
+  padding: 1rem 2rem;
 }
 
-// .mobile_logo {
-//   margin: 1rem;
-// }
-
-// .mobile_logo {
-//   width: calc(50% - 2rem);
-//   object-fit: cover;
-// }
+button.menu {
+  padding: 0;
+  font-family: $base-font-family;
+  line-height: $base-line-height * ($base-font-size);
+  color: $primaryfont;
+  background: none;
+  border: none;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .menu {
+  padding: 0.5rem;
   @include flexCenter();
-  flex-wrap: wrap;
-  & > * {
-    text-transform: uppercase;
+  flex-direction: column;
+
+  ul {
+    & > * {
+      text-transform: uppercase;
+      padding: 0.5rem;
+    }
   }
 
   li {
@@ -64,10 +39,6 @@
     }
   }
 
-  > * {
-    margin: 0.5rem;
-  }
-
   a {
     text-transform: uppercase;
   }
@@ -75,27 +46,15 @@
 
 .search_bar {
   border: 1px solid black;
-  padding: 1rem;
+  padding: 0.5rem;
   position: relative;
   @include flexCenter();
   border-radius: 10px;
 
   .search_box {
     border: none;
-    // padding: 0.5rem;
-    // text-align: center;
     font-family: $base-font-family;
   }
-
-  // .glyph_container {
-  //   position: absolute;
-  //   top: 0;
-  //   bottom: 0;
-  //   right: 12px;
-  //   height: 20px;
-  //   width: 20px;
-  //   margin: auto;
-  // }
 
   .search_glyph::before {
     content: "";
@@ -106,6 +65,13 @@
   }
 }
 
+.sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 50;
+}
+
 .dropdown {
   color: $primaryfont;
   text-transform: uppercase;
@@ -113,76 +79,4 @@
   &:hover {
     color: $primaryfont;
   }
-}
-
-/* Position and sizing of burger button */
-.bm-burger-button {
-  position: fixed;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
-}
-
-/* Color/shape of burger icon bars */
-.bm-burger-bars {
-  background: #373a47;
-}
-
-/* Color/shape of burger icon bars on hover*/
-.bm-burger-bars-hover {
-  background: #a90000;
-}
-
-/* Position and sizing of clickable cross button */
-.bm-cross-button {
-  height: 24px;
-  width: 24px;
-}
-
-/* Color/shape of close button cross */
-.bm-cross {
-  background: #bdc3c7;
-}
-
-/*
-Sidebar wrapper styles
-Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-*/
-.bm-menu-wrap {
-  position: fixed;
-  height: 100%;
-}
-
-/* General sidebar styles */
-.bm-menu {
-  background: #373a47;
-  padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
-}
-
-/* Morph shape necessary with bubble or elastic */
-// .bm-morph-shape {
-//   fill: #373a47;
-// }
-
-/* Wrapper for item list */
-.bm-item-list {
-  color: #b8b7ad;
-  padding: 0.8em;
-}
-
-/* Individual item */
-.bm-item {
-  display: inline-block;
-}
-
-/* Styling of overlay */
-.bm-overlay {
-  background: $light;
-  // background: rgba(0, 0, 0, 0.3);
-}
-
-.bm-menu-wrap {
-  background: $light;
 }

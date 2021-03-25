@@ -1,4 +1,3 @@
-import {NavLink} from 'react-router-dom'
 import desktop from '../../assets/SecondLife_LOGO/logo_desktop.png'
 import mobile from '../../assets/SecondLife_LOGO/logo_mobile.png'
 

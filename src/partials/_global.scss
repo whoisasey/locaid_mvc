@@ -4,7 +4,6 @@ body {
   line-height: $base-line-height * ($base-font-size);
   color: $primaryfont;
   font-weight: 100;
-  // background-color: rgba(248, 248, 248, 1);
 }
 
 h1,
@@ -16,47 +15,39 @@ h5 {
   color: $header;
 }
 h1 {
-  font-size: $base-font-size * 6;
-  font-weight: 600;
-  line-height: $base-line-height * ($base-font-size * 3.5);
+  font-size: $base-font-size * 4;
+  line-height: $base-line-height * ($base-font-size * 2.5);
 }
 
 h2 {
-  font-size: $base-font-size * 5;
+  font-size: $base-font-size * 3;
   line-height: $base-line-height * ($base-font-size * 3);
 }
 
 h3 {
-  font-size: $base-font-size * 3.5;
+  font-size: $base-font-size * 2.75;
   line-height: $base-line-height * ($base-font-size * 2.5);
 }
 
 h4 {
-  font-size: $base-font-size * 3;
+  font-size: $base-font-size * 2.5;
   line-height: $base-line-height * ($base-font-size * 2);
 }
 
 h5 {
-  font-size: $base-font-size * 2.5;
+  font-size: $base-font-size * 2.25;
+  line-height: $base-line-height * ($base-font-size * 1.8);
+}
+
+h6 {
+  font-size: $base-font-size * 2;
+  font-weight: lighter;
   line-height: $base-line-height * ($base-font-size * 1.5);
 }
 
 li {
   font-weight: 100;
 }
-
-h6 {
-  font-size: $base-font-size * 1.5;
-  font-weight: lighter;
-  line-height: $base-line-height * ($base-font-size * 1.5);
-}
-
-// svg {
-//   font-size: $base-font-size * 3;
-//   color: lightgray;
-//   display: flex;
-//   margin: 2rem auto;
-// }
 
 a {
   text-decoration: none;
@@ -65,24 +56,10 @@ a {
 }
 
 footer {
-  height: 10vh;
+  height: 5vh;
   background-color: $primaryfont;
-  // position: sticky;
-  // margin-top: 5rem;
 }
 
-button.menu {
-  font-family: $base-font-family;
-  font-size: $base-font-size * 0.7;
-  line-height: $base-line-height * ($base-font-size);
-  color: $primaryfont;
-  background: none;
-  border: none;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .wrapper {
   max-width: 1400px;
   width: 85%;
@@ -99,27 +76,12 @@ button.menu {
   background-color: $btn-clr;
   padding: 1rem 2rem;
   border-radius: 10px;
-  // margin: 1rem;
   display: inline-block;
 }
-
-// .back_btn {
-//   background: none;
-//   border: none;
-//   display: flex;
-//   justify-content: flex-start;
-//   align-items: center;
-//   text-transform: uppercase;
-
-//   svg {
-//     margin: 0;
-//   }
-// }
 
 .scrollTop {
   position: fixed;
   right: 100px;
-  // width: 100%;
   bottom: 20px;
   align-items: center;
   height: 20px;

@@ -1,9 +1,6 @@
 .single {
-  // display: flex;
-
   img {
     width: 50%;
-    // margin: 1rem auto;
   }
 
   em {
@@ -33,7 +30,6 @@
     padding: 0.75rem 0;
     background-color: $header;
     @include flexCenter();
-    // margin: 3rem auto;
     p {
       color: white;
     }
@@ -66,46 +62,13 @@
   width: 100%;
 }
 
-.single_info {
-  display: flex;
-  text-align: center;
-
-  h4 {
-    font-weight: bold;
-  }
-
-  & > * {
-    margin: 1rem 3rem;
-  }
-}
-
-.single_services,
-.single_items,
-.single_contact {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  & > * {
-    margin-top: 1rem;
-  }
+.list_style_col {
+  padding-left: 1rem;
 }
 
 .list_style_one {
   display: flex;
   flex-direction: column;
-}
-.single_services {
-  ul {
-    text-transform: capitalize;
-
-    li {
-      margin: 0.5rem 1rem;
-    }
-  }
-
-  div > p {
-    margin-top: 1rem;
-  }
 }
 
 .single_icons {
@@ -113,7 +76,6 @@
 }
 
 .single_gallery {
-  // padding-top: 5rem;
   display: flex;
   flex-wrap: wrap;
 

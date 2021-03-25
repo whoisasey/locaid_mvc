@@ -37,9 +37,11 @@ export const donations = [
 const About = () => {
 	return (
 		<Fragment>
-		<div className="about_hero">
-				<h2>What we do</h2>
-				<div className="hero_right"><img src={img} alt="woman on computer with a drink" /></div>
+		<div className="header">
+				<div className="header_left">
+					<h2>What we do</h2>
+				</div>
+				<div className="header_right"><img src={img} alt="woman on computer with a drink" /></div>
 			</div>
 				<div className="wrapper">
 				<div className="single_section">
@@ -52,7 +54,7 @@ const About = () => {
 
 				<div className="single_section">
 					<div className="single_left">
-						<h4>Why is this <br/>important? </h4>
+						<h4>Why is this important? </h4>
 					</div>
 
 					<div className="single_right">
@@ -62,7 +64,7 @@ const About = () => {
 
 				<div className="single_section">
 					<div className="single_left">
-						<h4>Verified &<br/> Certified</h4>
+						<h4>Verified & Certified</h4>
 					</div>
 					<div className="single_right">
 						<h6>The charities in the Second Life website are charities from the list on the government of Canada website. We ensure donors are provided with the knowledge to make informed decisions in their donations. If you would like to learn more, please visit the <a href="https://www.canada.ca/en/revenue-agency/services/charities-giving/giving-charity-information-donors.html"rel="noreferrer" target="_blank">Canada.ca</a> donor website. 
@@ -79,7 +81,7 @@ const About = () => {
 						return (
 							<li key={index} className="icon">
 								<img src={el.img[0] } alt="" />
-								<h6>{el.text}</h6>
+								<p>{el.text}</p>
 							</li>
 						)
 					})}
