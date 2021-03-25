@@ -12,9 +12,10 @@ const Nav = ({ props, setSearch, categories, locations, searchVal, setSearchVal,
 	useEffect(() => {
 		setScreenWidth(window.innerWidth)
 	}, [])
+	// console.log(screenWidth)
 
 	const ifMobile = (screenWidth <= 768)
-
+	// console.log(ifMobile)
 	const reset = (e) => {
 	setSearchVal('')
 	setSearch('')
@@ -34,7 +35,7 @@ const Nav = ({ props, setSearch, categories, locations, searchVal, setSearchVal,
 				
 				<Dropdown
 					className="menu"
-					title='Trusted Charities'
+					title='All Charities'
 				>
 					<Dropdown.Item className="dropdown"
 					>
@@ -70,9 +71,6 @@ const Nav = ({ props, setSearch, categories, locations, searchVal, setSearchVal,
 						</Dropdown.Submenu>
 					</Dropdown.Item >
 
-					{/* <Dropdown.Item className="dropdown">
-						<NavLink to="/top-viewed"  className="dropdown">Top Viewed</NavLink>
-					</Dropdown.Item> */}
 
 					<Dropdown.Item >
 						<NavLink to="/high-impact" className="dropdown">High Impact</NavLink>
@@ -81,7 +79,12 @@ const Nav = ({ props, setSearch, categories, locations, searchVal, setSearchVal,
 				
 				
 							<NavLink to="/search">
-					<input type="text" placeholder="&#x1F50D; Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
+					<div className="search_bar">
+						<input type="text" className="search_box" placeholder="Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
+						<div className="glyph_container">
+							<span className="search_glyph"></span>
+						</div>
+					</div>
 				</NavLink>
 			</ul>
 		</nav>

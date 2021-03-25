@@ -24,6 +24,7 @@
 //   display: block;
 // }
 .logo {
+  padding-left: 4rem;
   // display: inline-block;
   // margin: 0 auto;
 
@@ -52,14 +53,6 @@
     text-transform: uppercase;
   }
 
-  input {
-    border-radius: 10px;
-    border: none;
-    padding: 0.5rem;
-    text-align: center;
-    font-family: $base-font-family;
-  }
-
   li {
     list-style-type: none;
     font-size: $base-font-size * 0.7;
@@ -77,6 +70,39 @@
 
   a {
     text-transform: uppercase;
+  }
+}
+
+.search_bar {
+  border: 1px solid black;
+  padding: 1rem;
+  position: relative;
+  @include flexCenter();
+  border-radius: 10px;
+
+  .search_box {
+    border: none;
+    // padding: 0.5rem;
+    // text-align: center;
+    font-family: $base-font-family;
+  }
+
+  // .glyph_container {
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   right: 12px;
+  //   height: 20px;
+  //   width: 20px;
+  //   margin: auto;
+  // }
+
+  .search_glyph::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: url(../assets/search.png) no-repeat 0 0 / contain;
   }
 }
 

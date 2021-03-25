@@ -1,36 +1,36 @@
-import React, {Fragment} from 'react'
-
 
 const StatsContainer = () => {
 		const stats = [
 		{
 			value: "14M",
-			label: "tonnes of clothing are thrown away annually"
+			label: "Tonnes of clothing are thrown away annually."
 		},
 		{
 			value: "84%",
-			label: "of clothes ends up in landfills"
+			label: "Of clothes ends up in landfills."
 		},
 		{
 			value: "90%",
-			label: "of clothing donations end up with textile recyclers"
+			label: "Of clothing donations end up with textile recyclers."
 			}
 		]
 	
 	return (
-		<Fragment>
-				<h3>Does 100% of your <span>clothing</span> donation go to charity?</h3>
-				<div className="statistics">
+		<div className="single_section">
+				<div className="single_left">
+					<h3>Does 100% of your <span>clothing</span> donation go to charity?</h3>
+				</div>
+				<div className="statistics single_right">
 				{stats.map((el, index) => {
 					return (
 						<div className="statistic" key={index}>
 							<h3 className="value"><strong>{el.value}</strong></h3>
-							<div className="label">{ el.label}</div>
+							<h6 className="label">{ el.label}</h6>
 						</div>
 					)
 				})}
 				</div>
-		</Fragment>
+		</div>
 	)
 }
 

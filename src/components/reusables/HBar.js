@@ -71,7 +71,7 @@ export const HBar = () => {
 	}, [screenWidth]);
 
 
-	const ifMobile = (screenWidth <= 768)
+	const ifMobile = (screenWidth <= 1024)
 	
 
 	const desktop = h_bar_links.map((el, index) => {

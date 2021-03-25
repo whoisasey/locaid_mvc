@@ -1,0 +1,43 @@
+.single_section {
+  margin: 3rem 0;
+  display: flex;
+}
+
+.single_left {
+  width: 100%;
+}
+
+.single_right {
+  width: 100%;
+}
+
+.section {
+  padding: 3rem 6rem;
+  display: flex;
+  justify-content: space-between;
+  // width: 100%;
+  // border: $border;
+  background-color: $header;
+  // text-align: center;
+  // margin: 0 auto;
+  // flex-direction: column;
+  // padding: 3rem 0;
+  color: white;
+
+  h6 {
+    font-weight: bold;
+  }
+
+  .button {
+    margin-top: 1rem;
+  }
+
+  // .single_left,
+  // .single_right {
+  //   width: 50%;
+  // }
+  img {
+    margin: 0 auto;
+    width: 150px;
+  }
+}
