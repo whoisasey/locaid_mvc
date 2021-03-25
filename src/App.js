@@ -42,6 +42,8 @@ const App = () => {
   
   useEffect(() => {
     getData();
+    window.scroll(0,0)
+
   }, [getData]);
 
   useEffect(() => {
@@ -53,7 +55,6 @@ const App = () => {
     
     setCategories([...new Set(cohorts)])
     setLocation([...new Set(locationArr)])
-    window.scroll(0,0)
   }, [cohorts, data, locationArr])
 
 
