@@ -30,6 +30,7 @@
 }
 
 .card_header {
+  color: black;
   font-size: $base-font-size * 1.5;
   line-height: $base-line-height * ($base-font-size);
   font-weight: bold;
@@ -39,6 +40,7 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  color: black;
 
   h5 {
     font-weight: 700;

@@ -4,6 +4,7 @@ body {
   line-height: $base-line-height * ($base-font-size);
   color: $primaryfont;
   font-weight: 100;
+  font-display: swap;
 }
 
 h1,
