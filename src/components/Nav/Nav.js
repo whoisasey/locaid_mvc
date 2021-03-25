@@ -26,7 +26,7 @@ const Nav = ({ setSearch, categories, locations, searchVal, setSearchVal, search
 
 			<div className="menu" aria-label="navigation">
 				<ul >
-					<NavLink to="/about" tabIndex="1">About</NavLink>
+					<NavLink to="/about" tabIndex="0">About</NavLink>
 				
 					<Dropdown
 						className="menu"
