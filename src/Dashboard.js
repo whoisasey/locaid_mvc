@@ -40,7 +40,7 @@ const Dashboard = ({ props }) => {
 				<NavLink to="/about" className="button">Learn More</NavLink>
 				</div>
 				<div className="single_right">
-					<img src={ badge} alt="" />
+					<img src={ badge} alt="checkmark with a circle" />
 				</div>
 			</div>
 		</Fragment>

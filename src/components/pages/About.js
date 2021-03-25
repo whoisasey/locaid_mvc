@@ -80,7 +80,7 @@ const About = () => {
 					{donations.map((el, index) => {
 						return (
 							<li key={index} className="icon">
-								<img src={el.img[0] } alt="" />
+								<img src={el.img[0] } alt={`${el.img[0]} item to donate`}/>
 								<p>{el.text}</p>
 							</li>
 						)

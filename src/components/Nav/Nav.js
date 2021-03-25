@@ -19,14 +19,14 @@ const Nav = ({ setSearch, categories, locations, searchVal, setSearchVal, search
 	
 	return (
 
-		<nav  className="nav_desktop">
-			<NavLink to="/" className="logo" onClick={(e) => reset(e)}>
+		<nav  className="nav_desktop" aria-label="primary">
+			<NavLink to="/" className="logo" tabIndex="0" onClick={(e) => reset(e)}>
 				{ifMobile? <Mobile /> :<Desktop />}
 			</NavLink>
 
-			<div className="menu">
+			<div className="menu" aria-label="navigation">
 				<ul >
-					<NavLink to="/about">About</NavLink>
+					<NavLink to="/about" tabIndex="1">About</NavLink>
 				
 					<Dropdown
 						className="menu"
@@ -74,7 +74,7 @@ const Nav = ({ setSearch, categories, locations, searchVal, setSearchVal, search
 				
 					<NavLink to="/search">
 						<div className="search_bar">
-				<input type="text" className="search_box" placeholder="Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} />
+						<input type="text" className="search_box" placeholder="Search Charities" value={searchVal} onChange={(e) => searchSpace(e)} aria-label="search bar" tabIndex="0"/>
 				<div className="glyph_container">
 					<span className="search_glyph"></span>
 				</div>

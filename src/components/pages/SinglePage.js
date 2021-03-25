@@ -23,14 +23,8 @@ const SinglePage = (props) => {
 	if (single === undefined) {
 		return null;
 	} else {
-
-		
+	
 		const { summary, mission, vision, services, image_gallery } = single;
-// ! 
-		// end of the page
-		// add button for future steps - find directions or "locate closest charity"
-		// donate button
-		// complete the story
 
 		return (
 			<Fragment>
