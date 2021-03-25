@@ -24,7 +24,7 @@ const Dashboard = ({ props }) => {
 				<StatsContainer />
 
 			<div className="featured">
-				<h3>Featured Charities</h3>
+				<h4>Featured Charities</h4>
 				<h6>Featured charities are those in need of clothing and goods donations due to the lack of funding from the government.</h6>
 					<Featured props={props}/>
 			</div>
