@@ -4,10 +4,10 @@
 
 // desktop
 @media only screen and (min-width: 768px) {
-  h1 {
-    font-size: $base-font-size * 4.15;
-    line-height: $base-line-height * ($base-font-size * 3);
-  }
+  // h1 {
+  //   font-size: $base-font-size * 6;
+  //   line-height: $base-line-height * ($base-font-size * 3);
+  // }
 
   .header_left {
     & > * {
@@ -22,11 +22,15 @@
     padding: 3.5rem;
     padding-left: 6rem;
     justify-content: space-between;
+
+    & > * {
+      width: calc(100% / 2);
+    }
   }
 
-  .section {
-    width: 50%;
-  }
+  // .section {
+  //   width: 50%;
+  // }
   .stats {
     > h3 {
       width: 50%;
@@ -95,10 +99,6 @@
     }
   }
 
-  button.menu {
-    font-size: $base-font-size * 0.9;
-  }
-
   .h_bar {
     a {
       font-size: $base-font-size;
@@ -122,8 +122,12 @@
     background-color: white;
 
     a {
-      font-size: $base-font-size * 0.9;
+      font-size: $base-font-size * 1.2;
     }
+  }
+
+  button.menu {
+    font-size: $base-font-size * 1.2;
   }
   // .nav_mobile {
   //   display: none;
@@ -139,28 +143,24 @@
     }
   }
 
-  .logo {
-    width: 35%;
-  }
+  // .logo {
+  //   width: 35%;
+  // }
   .card {
     width: calc((100% / 3) - 2rem);
   }
 
-  .about_single {
-    div:nth-child(1) {
-      width: 40%;
-      // word-wrap: break-word;
-    }
+  .single_left {
+    width: 40%;
+  }
 
-    div:nth-child(2),
-    p:nth-child(2) {
-      width: 60%;
-    }
+  .single_right {
+    width: 60%;
   }
 
   .single_services,
   .single_items {
-    padding-top: 5rem;
+    padding-top: 3rem;
 
     h3 {
       width: 40%;

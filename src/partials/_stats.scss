@@ -10,21 +10,29 @@
 }
 
 .statistics {
-  padding-bottom: 2rem;
+  // padding-bottom: 2rem;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  text-transform: capitalize;
+  justify-content: center;
+  align-items: baseline;
+  // flex-wrap: wrap;
+  // justify-content: space-evenly;
+  // text-transform: capitalize;
 }
 
 .statistic {
-  width: calc((100% / 2) - 2rem);
+  width: calc((100% / 3));
   text-align: center;
-  margin: 1rem;
+  margin: 0.5rem auto;
+  @include flexCenter();
+  flex-direction: column;
 }
 
 .value {
-  margin: 1rem auto;
+  margin: 0.5rem;
   color: $blue-acc;
   font-size: $base-font-size * 2.8;
+}
+
+.label {
+  width: 100%;
 }

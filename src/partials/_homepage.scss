@@ -27,20 +27,10 @@
   }
 }
 
-.section {
-  text-align: center;
-  margin: 0 auto;
-  flex-direction: column;
-  padding: 3rem 0;
-
-  .button {
-    margin-top: 1rem;
-  }
-}
-
 .featured {
+  margin: 3rem 0;
   & > * {
-    margin: 0.75rem 0;
+    margin: 1rem 0;
   }
   .featured_cards {
     display: flex;
