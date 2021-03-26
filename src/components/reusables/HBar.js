@@ -76,7 +76,7 @@ export const HBar = () => {
 
 	const desktop = h_bar_links.map((el, index) => {
 			return (
-				<Link activeclass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500}  key={index}>{el.name }</Link>
+				<Link activeclass="active" to={el.section} spy={true} smooth={true} offset={50} duration={500}  key={index} tabIndex="0">{el.name }</Link>
 			)
 	})
 	

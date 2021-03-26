@@ -18,7 +18,7 @@ export const SingleHeader = ({ props }) => {
 			<h3>{name}</h3>
 				<strong>Charity/BN: {charity_no}</strong>
 				<div className="donate_cta">
-					<Link activeClass="active" className="button" to="contact" spy={true} smooth={true} offset={50} duration={500} >
+					<Link activeClass="active" className="button" to="contact" spy={true} smooth={true} offset={50} duration={500} tabIndex="0">
 								Donate</Link>
 				</div>
 		</div>
@@ -167,9 +167,9 @@ export const SingleContact = ({ props }) => {
 				</ul>
 	</div>
 	<div className="contact_buttons">
-			<a href={website} className="button" rel="noreferrer" target="_blank" >Website</a>
-				<a href={`tel:${phone}`} className="button" rel="noreferrer" target="_blank">Call Charity</a>
-				<a href={ `mailto:${email}`} className="button" rel="noreferrer" target="_blank">Email Charity</a>
+			<a href={website}  tabIndex="0" className="button" rel="noreferrer" target="_blank" >Website</a>
+				<a href={`tel:${phone}`} tabIndex="0"  className="button" rel="noreferrer" target="_blank">Call Charity</a>
+				<a href={ `mailto:${email}`}  tabIndex="0" className="button" rel="noreferrer" target="_blank">Email Charity</a>
 			</div>
 
 			</Fragment>
