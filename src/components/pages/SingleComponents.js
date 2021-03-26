@@ -1,5 +1,4 @@
 import React, { Fragment, useEffect } from 'react'
-import {NavLink} from 'react-router-dom'
 import {Link, scrollSpy,  } from 'react-scroll'
 
 export const SingleHeader = ({ props }) => {
@@ -8,7 +7,7 @@ export const SingleHeader = ({ props }) => {
 			scrollSpy.update();
 	}, [])
 
-	const { name, charity_no, image_gallery, website } = props;
+	const { name, charity_no, image_gallery } = props;
 	const image_header = image_gallery ? 	<img src={image_gallery[2]} alt={name}/> : null
 
 	return (
@@ -37,7 +36,7 @@ export const SingleInfo = ({ mission, vision }) => {
 				<h4>Mission</h4>
 			</div>
 			<div className="single_right">
-				<h6>{mission}</h6>
+					<h6>{mission}</h6>
 			</div>
 			</div>
 		)
@@ -65,7 +64,7 @@ export const SingleInfo = ({ mission, vision }) => {
 	}
 
 
-export const SingleAbout = ({ summary}) => {
+export const SingleAbout = ({ summary,}) => {
 	return (
 		<div className="single_section" name="about">
 			<div className="single_left">

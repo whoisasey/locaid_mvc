@@ -1,6 +1,5 @@
-import { Fragment } from 'react';
+import { Fragment,useState, useEffect } from 'react';
 import { SingleHeader, SingleInfo, SingleAbout, SingleFinance, SingleContact, SingleGallery, SingleServices, SingleItems } from './SingleComponents'
-
 import {HBar} from '../reusables/HBar'
 require('dotenv').config()
 
@@ -18,12 +17,13 @@ const SinglePage = (props) => {
 		}
 	});
 
-	const single = page[0];
 
+	const single = page[0];
+	
 	if (single === undefined) {
 		return null;
 	} else {
-	
+		
 		const { summary, mission, vision, services, image_gallery } = single;
 
 		return (
@@ -35,9 +35,9 @@ const SinglePage = (props) => {
 				<p>Current Covid Restrictions: <strong>{ single.item_accepted_currently}</strong></p>
 				</div>
 					<HBar />
-					{summary && <SingleAbout summary={summary}/>}
+						{summary && <SingleAbout summary={summary} />}
 					
-				{<SingleInfo vision={vision} mission={mission} />}
+						{<SingleInfo vision={vision} mission={mission} />}
 
 					{image_gallery &&<SingleGallery props={single} />}
 					
