@@ -3,9 +3,10 @@ $primaryfont: rgba(79, 79, 79, 1);
 $light-bg: rgba(248, 248, 248, 1);
 $light: rgba(196, 196, 196, 1);
 $accent: rgba(245, 182, 45, 1);
-$blue-acc: rgba(48, 171, 178, 1);
+// $blue-acc: rgba(48, 171, 178, 1);
 $btn-clr: $accent;
 $header: rgba(0, 62, 103, 1);
+$blue-acc: $header;
 
 $base-font-family: futura-pt, sans-serif;
 $base-line-height: 1.4;
