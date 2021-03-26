@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import img from '../../assets/about_page/Illustration/what_we_do_img.png'
-import tshirt from '../../assets/about_page/Icons/1-GoodCondition.png'
-import toosmall from '../../assets/about_page/Icons/2-TooSmall.png'
-import dontwear from '../../assets/about_page/Icons/3-DontWear.png'
-import nounders from '../../assets/about_page/Icons/4-NoUndergarments.png'
-import formal from '../../assets/about_page/Icons/5-FormalAttire.png'
-import nosmell from '../../assets/about_page/Icons/6-NoSmell.png'
+import tshirt from '../../assets/about_page/AboutPage_Icons/ICONS-01.png'
+import toosmall from '../../assets/about_page/AboutPage_Icons/ICONS-02.png'
+import dontwear from '../../assets/about_page/AboutPage_Icons/ICONS-06.png'
+import nounders from '../../assets/about_page/AboutPage_Icons/ICONS-03.png'
+import formal from '../../assets/about_page/AboutPage_Icons/ICONS-04.png'
+import nosmell from '../../assets/about_page/AboutPage_Icons/ICONS-05.png'
 
 
 export const donations = [
