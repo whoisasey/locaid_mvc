@@ -1,6 +1,8 @@
 .logo {
-  display: inline-block;
-  padding: 1rem 2rem;
+  padding: 1rem;
+  margin: 0 auto;
+  width: 50%;
+  @include flexCenter();
 }
 
 button.menu {
@@ -31,7 +33,6 @@ button.menu {
   li {
     list-style-type: none;
     font-size: $base-font-size;
-    // margin: 1rem;
 
     &:hover {
       background-color: rgba(175, 212, 214, 1);
@@ -79,4 +80,8 @@ button.menu {
   &:hover {
     color: $primaryfont;
   }
+}
+
+.Dropdown_menu__1xIbZ {
+  right: -100px !important;
 }
