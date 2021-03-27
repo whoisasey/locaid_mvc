@@ -6,14 +6,14 @@ const Slide = ({ content, width }) => {
   // console.log(width)
   return (
     <div
-      style={css`
-        height: 100%;
-        width: ${width}px;
-        background-image: url('${content}');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-      `}
+      style={{
+        height: "100%",
+        width: `${width}px`,
+        backgroundImage: `url('${content}')`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
     />
   )
 }

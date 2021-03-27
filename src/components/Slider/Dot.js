@@ -4,13 +4,13 @@ import { css, jsx } from '@emotion/react'
 const Dot = ({ active }) => {
   return (
     <span
-      css={css`
-        padding: 10px;
-        margin-right: 5px;
-        cursor: pointer;
-        border-radius: 50%;
-        background: ${active ? 'black' : 'white'};
-      `}
+      style={{
+        padding: "10px",
+  marginRight: "5px",
+  cursor: "pointer",
+  borderRadius: "50%",
+  background: `${ active ? 'black' : 'white' }`,
+        }}
     />
   )
 }
@@ -20,14 +20,14 @@ const MemoDot = memo(Dot)
 const Dots = ({ slides, activeSlide }) => {
   return (
     <div
-      css={css`
-        position: absolute;
-        bottom: 25px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      `}
+      style={{
+        position: "absolute",
+        bottom: "25px",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       {slides.map((slide, i) => (
         <MemoDot key={slide} active={activeSlide === i} />
@@ -35,5 +35,6 @@ const Dots = ({ slides, activeSlide }) => {
     </div>
   )
 }
+
 
 export default Dots

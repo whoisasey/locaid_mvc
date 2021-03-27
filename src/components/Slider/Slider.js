@@ -140,12 +140,12 @@ const Slider = (props) => {
   )
 }
 
-const SliderCSS = css`
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  margin: 0 auto;
-  overflow: hidden;
-`
+const SliderCSS = {
+  position: "relative",
+  height: "100vh",
+  width: "100vw",
+  margin: "0 auto",
+  overflow: "hidden",
+}
 
 export default Slider
