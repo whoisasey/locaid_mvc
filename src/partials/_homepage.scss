@@ -45,3 +45,10 @@
     width: calc((100% / 3) - 2rem);
   }
 }
+
+.cta_ {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 70%;
+}

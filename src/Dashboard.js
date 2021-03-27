@@ -13,7 +13,10 @@ const Dashboard = ({ props }) => {
 				<div className="header_left">
 					<h1>Donate with high impact.</h1>
 					<h6>Donate your clothes to local charities you trust in Toronto.</h6>
-					<NavLink to="/all" className="button">Find A Charity</NavLink>
+					<div className="cta_">
+						<NavLink to="/all" className="button">Find a charity</NavLink>
+						<NavLink to="/" className="button">Locate a bin near me</NavLink>
+					</div>
 				</div>
 				<div className="header_right">
 					<img src={img } alt="cartoon woman carrying a box of clothing to donate" />
