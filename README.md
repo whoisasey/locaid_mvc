@@ -1,6 +1,6 @@
 # Welcome to Second Life!
 
-This is the code for the Second Life website, a trusted list of charities to help donate your clothes - [secondlife.herokuapp.com]
+This is the code for the Second Life website, a trusted list of charities to help donate your clothes - [secondlife.herokuapp.com](secondlife.herokuapp.com)
 
 ## A few places you can get started:
 
